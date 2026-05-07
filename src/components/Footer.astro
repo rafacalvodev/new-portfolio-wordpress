@@ -80,10 +80,9 @@ const currentYear = new Date().getFullYear();
 </footer>
 
 <style lang="scss">
-  footer {
+  .footer {
     background-color: var(--footer-bg);
-    margin-block-start: var(--space-m-l);
-    padding-block-start: var(--space-s-m);
+    padding-block-start: var(--space-m-l);
     border-top: 0.3em solid var(--primary-300);
     color: var(--footer-color);
 
@@ -117,9 +116,8 @@ const currentYear = new Date().getFullYear();
 
     &__mail {
       a {
-        //font-size: var(--step-1);
-        font-weight: 600;
-        color: var(--alert-100);
+        font-weight: 700;
+        text-decoration: underline;
       }
     }
 
