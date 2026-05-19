@@ -19,9 +19,19 @@ const { Content } = await render(post);
   description={post.data.description}
   image={post.data.featuredImage || "/social-preview-image.png"}
 >
-  <article>
-    <div class="post-hero | flow">
-      <div class="container">
+  <article id="blog-post">
+    <div class="post-hero">
+      <div class="container | flow">
+        {
+          post.data.featuredImage && (
+            <img
+              src={post.data.featuredImage}
+              alt={post.data.title}
+              class="blog-card__image"
+              loading="lazy"
+            />
+          )
+        }
         <h1>{post.data.title}</h1>
         <p class="description">{post.data.description}</p>
         <div class="meta">
@@ -48,7 +58,25 @@ const { Content } = await render(post);
 <style lang="scss">
   @use "../../assets/scss/abstracts/colors.scss" as *;
 
+  #blog-post {
+    font-family: "Piazzolla", Georgia, "Times New Roman", Times, serif;
+
+    h1 {
+      font-family: "Lexend", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h2,
+    h3,
+    h4 {
+      font-family: "Piazzolla", Georgia, "Times New Roman", Times, serif;
+    }
+  }
+
   article {
+    margin-block: 2rem;
+  }
+
+  .post-hero {
     margin-block: 2rem;
   }
 
@@ -67,6 +95,7 @@ const { Content } = await render(post);
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    font-family: "Courier New", Courier, monospace;
   }
 
   .tag {

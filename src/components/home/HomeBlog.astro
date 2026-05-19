@@ -27,7 +27,7 @@ const recentPosts = posts
                 />
               )}
               <h3>{post.data.title}</h3>
-              <p>{post.data.description}</p>
+              <p>{post.data.cardDescription ?? post.data.description}</p>
               <div class="blog-card__meta | flex">
                 <time datetime={post.data.date.toISOString()}>
                   {post.data.date.toLocaleDateString()}

@@ -1,47 +1,83 @@
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Lexend';
   src:
-    local('Open Sans ExtraBold'),
-    local('OpenSans-ExtraBold'),
-    url('/fonts/OpenSans-ExtraBold.woff2') format('woff2'),
-    url('/fonts/OpenSans-ExtraBold.woff') format('woff');
-  font-weight: bold;
+    local('Lexend ExtraBold'),
+    local('Lexend-ExtraBold'),
+    url('/fonts/Lexend/lexend-latin-800-normal.woff2') format('woff2'),
+    url('/fonts/Lexend/lexend-latin-800-normal.woff') format('woff');
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Lexend';
   src:
-    local('Open Sans Bold'),
-    local('OpenSans-Bold'),
-    url('/fonts/OpenSans-Bold.woff2') format('woff2'),
-    url('/fonts/OpenSans-Bold.woff') format('woff');
-  font-weight: bold;
+    local('Lexend Bold'),
+    local('Lexend-Bold'),
+    url('/fonts/Lexend/lexend-latin-700-normal.woff2') format('woff2'),
+    url('/fonts/Lexend/lexend-latin-700-normal.woff') format('woff');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Lexend';
   src:
-    local('Open Sans Italic'),
-    local('OpenSans-Italic'),
-    url('/fonts/OpenSans-Italic.woff2') format('woff2'),
-    url('/fonts/OpenSans-Italic.woff') format('woff');
-  font-weight: normal;
+    local('Lexend Regular'),
+    local('Lexend-Regular'),
+    url('/fonts/Lexend/lexend-latin-400-normal.woff2') format('woff2'),
+    url('/fonts/Lexend/lexend-latin-400-normal.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Piazzolla';
+  src:
+    local('Piazzolla ExtraBold'),
+    local('Piazzolla-ExtraBold'),
+    url('/fonts/Piazzolla/piazzolla-latin-800-normal.woff2') format('woff2'),
+    url('/fonts/Piazzolla/piazzolla-latin-800-normal.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Piazzolla';
+  src:
+    local('Piazzolla Bold'),
+    local('Piazzolla-Bold'),
+    url('/fonts/Piazzolla/piazzolla-latin-700-normal.woff2') format('woff2'),
+    url('/fonts/Piazzolla/piazzolla-latin-700-normal.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Piazzolla';
+  src:
+    local('Piazzolla Italic'),
+    local('Piazzolla-Italic'),
+    url('/fonts/Piazzolla/piazzolla-latin-400-italic.woff2') format('woff2'),
+    url('/fonts/Piazzolla/piazzolla-latin-400-italic.woff') format('woff');
+  font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Piazzolla';
   src:
-    local('Open Sans Regular'),
-    local('OpenSans-Regular'),
-    url('/fonts/OpenSans-Regular.woff2') format('woff2'),
-    url('/fonts/OpenSans-Regular.woff') format('woff');
-  font-weight: normal;
+    local('Piazzolla Regular'),
+    local('Piazzolla-Regular'),
+    url('/fonts/Piazzolla/piazzolla-latin-400-normal.woff2') format('woff2'),
+    url('/fonts/Piazzolla/piazzolla-latin-400-normal.woff') format('woff');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
