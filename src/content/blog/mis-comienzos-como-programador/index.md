@@ -34,4 +34,4 @@ Así empezó el primer proyecto web que hice: la página web de la [Fundación A
 
 ## El camino del aprendizaje
 
-Bien, ya tenía encaminado ese proyecto. Ahora me tocaba amprender cómo hacer páginas web de verdad
+Bien, ya tenía encaminado ese proyecto. Ahora me tocaba amprender cómo hacer páginas web mediante código y no usando el editor de bloques de WordPress.
