@@ -34,4 +34,12 @@ Así empezó el primer proyecto web que hice: la página web de la [Fundación A
 
 ## El camino del aprendizaje
 
-Bien, ya tenía encaminado ese proyecto. Ahora me tocaba amprender cómo hacer páginas web mediante código y no usando el editor de bloques de WordPress.
+Bien, ya tenía encaminado ese proyecto. Ahora me tocaba amprender cómo hacer páginas web mediante código y no usando el personalizador de WordPress.
+
+Siguiendo la costumbre, me metí en Youtube y busqué "Cómo hacer páginas web" (o algo parecido 😅), tanto en español como en inglés, y de los canales que más me llamó la atención me encontré con el de [Brad Traversy](https://www.youtube.com/@TraversyMedia), mejor conocido como Traversy Media. Gracias a Brad aprendí lo básico: escribir HTML, CSS y JavaScript; por supuesto, hice copias de los proyectos de práctica que él hacía (que, por cierto, tengo que ver dónde los guardé, para el baúl de los recuerdos).
+
+Luego, creo que en un video de Brad, o recomendación de Youtube, caí en las certificaciones de [freecodecamp](https://www.freecodecamp.org/) e hice las de desarrollo web que estaban en ese entonces. Ahora las estoy repitiendo porque las que tengo están en modo legado.
+
+Y colorín, colorado. Así fue como empecé en este mundillo de la programación web. Sigo aprendiendo por mi cuenta, leyendo artículos y documentación, y viendo videos en YouTube, también haciendo algún que otro curso con certificado para llenar el curículum (y el perfil de LinkedIn), pero así fue como arranqué.
+
+**Y tú, ¿cómo empezaste en la programación?**

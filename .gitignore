@@ -1,5 +1,6 @@
 # build output
 dist/
+
 # generated types
 .astro/
 
@@ -27,3 +28,6 @@ pnpm-debug.log*
 .github/
 .agents/
 .vscode/
+
+opencode.json
+AGENTS.md

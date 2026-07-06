@@ -1,43 +1,19 @@
-# Astro Starter Kit: Minimal
+# Página web personal y protafolio.
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Mi sitio web donde muestro los trabajos y proyectos que he hecho, y donde escribo un poquito sobre desarrollo web y el mundo freelance.
+Tiene tema claro/oscuro que dependerá del tema del sistema operativo (o navegador).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+## Stack
+- Astro
+- Typescript
+- HTML Semántico
+- SCSS/Sass
+- Configuraciones de accesibilidad siguiendo normativas WCAG 2.2
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Pendiente
+- [ ]  Opción multilenguaje, empezando por inglés.
+- [ ]  Posible integración con un Headless CMS.
+- [ ]  Posible migración a CSS puro.

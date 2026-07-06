@@ -11,11 +11,11 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
-    "@astrojs/mdx": "^6.0.3",
+    "@astrojs/mdx": "^7.0.2",
     "@iconify-json/lucide": "^1.2.68",
     "@lucide/astro": "^0.544.0",
     "accessible-astro-components": "^5.0.1",
-    "astro": "^6.4.8",
+    "astro": "^7.0.6",
     "astro-icon": "^1.1.5",
     "sass": "^1.93.2",
     "typescript": "^5.9.3"
