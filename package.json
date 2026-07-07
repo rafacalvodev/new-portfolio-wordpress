@@ -1,17 +1,24 @@
 {
-  "name": "portfolio-v6",
+  "name": "rafacalvodev-headless-wp",
   "type": "module",
   "version": "0.0.1",
+  "description": "Portafolio personal con Astro + Headless WordPress (blog y servicios desde WP REST API)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rafacalvodev/new-portfolio-wordpress.git"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "postbuild": "node scripts/generate-sitemap.mjs",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check": "astro check"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/mdx": "^7.0.2",
+    "@astrojs/node": "^11.0.2",
     "@iconify-json/lucide": "^1.2.68",
     "@lucide/astro": "^0.544.0",
     "accessible-astro-components": "^5.0.1",
