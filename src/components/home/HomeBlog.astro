@@ -1,10 +1,7 @@
 ---
-import { getCollection } from "astro:content";
+import { fetchPosts } from "../../lib/wordpress";
 
-const posts = await getCollection("blog");
-const recentPosts = posts
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 3);
+const { posts } = await fetchPosts(3);
 ---
 
 <section class="home-section | blog-section">
@@ -15,31 +12,33 @@ const recentPosts = posts
     </div>
     <ul class="grid">
       {
-        recentPosts.map((post) => (
-          <li>
-            <article class="card flow">
-              {post.data.featuredImage && (
-                <img
-                  src={post.data.featuredImage}
-                  alt={post.data.title}
-                  class="blog-card__image"
-                  loading="lazy"
-                />
-              )}
-              <h3>{post.data.title}</h3>
-              <p>{post.data.cardDescription ?? post.data.description}</p>
-              <div class="blog-card__meta | flex">
-                <time datetime={post.data.date.toISOString()}>
-                  {post.data.date.toLocaleDateString()}
-                </time>
-                <span>{post.data.readingTime} min de lectura</span>
-              </div>
-              <a class="button" href={`/blog/${post.id}`}>
-                Leer más
-              </a>
-            </article>
-          </li>
-        ))
+        posts.map((post) => {
+          const featuredImage = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+          return (
+            <li>
+              <article class="card flow">
+                {featuredImage && (
+                  <img
+                    src={featuredImage}
+                    alt={post.title.rendered}
+                    class="blog-card__image"
+                    loading="lazy"
+                  />
+                )}
+                <h3 set:html={post.title.rendered} />
+                <p set:html={post.excerpt.rendered} />
+                <div class="blog-card__meta | flex">
+                  <time datetime={post.date}>
+                    {new Date(post.date).toLocaleDateString()}
+                  </time>
+                </div>
+                <a class="button" href={`/blog/${post.slug}`}>
+                  Leer más
+                </a>
+              </article>
+            </li>
+          );
+        })
       }
     </ul>
     <div class="home-section__footer">

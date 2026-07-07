@@ -5,10 +5,14 @@ import mdx from "@astrojs/mdx";
 
 import icon from "astro-icon";
 
+import node from "@astrojs/node";
+
 // https://astro.build/config
 export default defineConfig({
+  output: "server",
+  adapter: node({ mode: "standalone" }),
   compressHTML: true,
-  site: "http://localhost:4321/",
+  site: "https://rafacalvodev.com",
   integrations: [mdx(), icon()],
   vite: {
     css: {

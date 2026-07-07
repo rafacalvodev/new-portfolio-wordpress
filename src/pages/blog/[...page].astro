@@ -1,71 +1,56 @@
 ---
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import Pagination from "../../components/Pagination.astro";
-import { getCollection } from "astro:content";
-import type { GetStaticPaths, Page } from "astro";
-import type { CollectionEntry } from "astro:content";
+import { fetchPosts } from "../../lib/wordpress";
 
-export const getStaticPaths = (async ({ paginate }) => {
-  const posts = await getCollection("blog");
-  const sortedPosts = posts.sort(
-    (a, b) => b.data.date.getTime() - a.data.date.getTime(),
-  );
+const pageParam = Astro.params.page;
+const currentPage = pageParam ? parseInt(pageParam) : 1;
+const perPage = 6;
 
-  return paginate(sortedPosts, { pageSize: 6 });
-}) satisfies GetStaticPaths;
-
-interface Props {
-  page: Page<CollectionEntry<"blog">>;
-}
-
-const { page } = Astro.props;
+const { posts, total: totalPosts } = await fetchPosts(perPage, currentPage);
+const totalPagesCount = Math.ceil(totalPosts / perPage);
 ---
 
 <DefaultLayout
-  title={`Blog – Página ${page.currentPage}`}
-  description="Read my latest thoughts on web development and design."
+  title={`Blog${currentPage > 1 ? ` – Página ${currentPage}` : ""}`}
+  description="Lee mis últimas reflexiones sobre desarrollo web y diseño."
 >
   <header class="blog-header">
     <div class="container">
       <h1>Blog</h1>
-      <p>Read my latest thoughts on web development and design.</p>
+      <p>Lee mis últimas reflexiones sobre desarrollo web y diseño.</p>
     </div>
   </header>
   <section class="blog-posts">
     <div class="container">
       <div class="grid">
         {
-          page.data.map((post) => (
-            <article class="flow | card">
-              {post.data.featuredImage && (
-                <img
-                  src={post.data.featuredImage}
-                  alt={post.data.title}
-                  class="blog-card__image"
-                  loading="lazy"
-                />
-              )}
-              <div class="blog-card__content flex">
-                <div class="blog-card__tags | flex">
-                  {post.data.tags?.map((tag) => (
-                    <span class="tag">{tag}</span>
-                  ))}
+          posts.map((post) => {
+            const featuredImage = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+            return (
+              <article class="flow | card">
+                {featuredImage && (
+                  <img
+                    src={featuredImage}
+                    alt={post.title.rendered}
+                    class="blog-card__image"
+                    loading="lazy"
+                  />
+                )}
+                <div class="blog-card__content flex">
+                  <h2 class="blog-card__title">
+                    <a href={`/blog/${post.slug}`} set:html={post.title.rendered} />
+                  </h2>
+                  <p class="blog-card__description" set:html={post.excerpt.rendered} />
+                  <div class="blog-card__meta">
+                    <time datetime={post.date}>
+                      {new Date(post.date).toLocaleDateString()}
+                    </time>
+                  </div>
                 </div>
-                <h2 class="blog-card__title">
-                  <a href={`/blog/${post.id}`}>{post.data.title}</a>
-                </h2>
-                <p class="blog-card__description">
-                  {post.data.cardDescription ?? post.data.description}
-                </p>
-                <div class="blog-card__meta">
-                  <time datetime={post.data.date.toISOString()}>
-                    {post.data.date.toLocaleDateString()}
-                  </time>
-                  <span> • {post.data.readingTime} min read</span>
-                </div>
-              </div>
-            </article>
-          ))
+              </article>
+            );
+          })
         }
       </div>
     </div>
@@ -74,10 +59,10 @@ const { page } = Astro.props;
     <div class="container flex">
       <Pagination
         basePath="/blog"
-        previousPage={page.url.prev ? page.url.prev : null}
-        nextPage={page.url.next ? page.url.next : null}
-        currentPage={page.currentPage}
-        totalPages={Math.ceil(page.total / page.size)}
+        previousPage={currentPage > 1 ? `/blog/${currentPage - 1}` : null}
+        nextPage={currentPage < totalPagesCount ? `/blog/${currentPage + 1}` : null}
+        currentPage={currentPage}
+        totalPages={totalPagesCount}
       />
     </div>
   </div>
@@ -118,19 +103,5 @@ const { page } = Astro.props;
       font-size: var(--step--1);
       margin-top: auto;
     }
-
-    &__tags {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-  }
-
-  .tag {
-    background: var(--alert-100);
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-size: var(--step--2);
-    color: #000;
   }
 </style>
