@@ -1,15 +1,17 @@
 import fs from "fs/promises";
 import path from "path";
+import { fileURLToPath } from "url";
 import astroConfig from "../astro.config.mjs";
 
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
-const rootDir = path.resolve(__dirname, "..", "");
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const rootDir = path.resolve(__dirname, "..");
 const distDir = path.join(rootDir, "dist");
 const pagesDir = path.join(rootDir, "src", "pages");
-const blogDir = path.join(rootDir, "src", "content", "blog");
 
 const siteBase =
   String(astroConfig.site || "").replace(/\/$/, "") || "http://localhost:4321";
+
+const WP_URL = process.env.WORDPRESS_URL || "https://cms.rafacalvodev.com/wp-json/wp/v2";
 
 function isDynamicRoute(filePath) {
   return /\[.*\]/.test(filePath);
@@ -64,20 +66,19 @@ async function collectPageRoutes(dir) {
 }
 
 async function collectBlogRoutes() {
-  let routes = [];
   try {
-    const entries = await fs.readdir(blogDir, { withFileTypes: true });
-    for (const entry of entries) {
-      if (!entry.isFile()) continue;
-      const ext = path.extname(entry.name).toLowerCase();
-      if (![".md", ".mdx"].includes(ext)) continue;
-      const slug = path.basename(entry.name, ext);
-      routes.push(normalizeRoute(`/blog/${slug}`));
+    // Fetch all posts from WordPress (using per_page=100 to get all in one request)
+    const res = await fetch(`${WP_URL}/posts?per_page=100&_fields=slug`);
+    if (!res.ok) {
+      console.warn(`Warning: Failed to fetch WordPress posts for sitemap: ${res.statusText}`);
+      return [];
     }
-  } catch {
-    // no blog folder; skip
+    const posts = await res.json();
+    return posts.map((post) => normalizeRoute(`/blog/${post.slug}`));
+  } catch (error) {
+    console.warn("Warning: Could not fetch WordPress posts for sitemap:", error.message);
+    return [];
   }
-  return routes;
 }
 
 async function run() {

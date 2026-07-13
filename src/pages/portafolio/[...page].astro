@@ -6,6 +6,8 @@ import type { GetStaticPaths, Page } from "astro";
 import type { CollectionEntry } from "astro:content";
 import VisitSite from "../../assets/icons/misc/CarbonArrowUpRight.svg";
 
+export const prerender = true;
+
 export const getStaticPaths = (async ({ paginate }) => {
   const projects = await getCollection("projects");
   return paginate(projects, { pageSize: 6 });

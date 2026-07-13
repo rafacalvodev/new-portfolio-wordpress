@@ -79,7 +79,7 @@ const pageHref = (page: number) =>
 
     {
       paginationPages.map((page) => (
-        <li class="pagination__item">
+        <li class="pagination__item" key={String(page)}>
           {typeof page === "string" ? (
             <span class="pagination__ellipsis" aria-hidden="true">
               …

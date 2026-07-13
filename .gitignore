@@ -31,3 +31,6 @@ pnpm-debug.log*
 
 opencode.json
 AGENTS.md
+
+# Local Netlify folder
+.netlify

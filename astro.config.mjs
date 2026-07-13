@@ -5,12 +5,12 @@ import mdx from "@astrojs/mdx";
 
 import icon from "astro-icon";
 
-import node from "@astrojs/node";
+import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
   output: "server",
-  adapter: node({ mode: "standalone" }),
+  adapter: netlify(),
   compressHTML: true,
   site: "https://rafacalvodev.com",
   integrations: [mdx(), icon()],

@@ -1,7 +1,8 @@
 ---
-import { fetchServices } from "../../lib/wordpress";
-
-const services = await fetchServices();
+import WebIcon from "../../assets/icons/services/CarbonDevices.svg";
+import StoreIcon from "../../assets/icons/services/CarbonShoppingCart.svg";
+import SearchIcon from "../../assets/icons/services/CarbonQuery.svg";
+import ToolIcon from "../../assets/icons/services/CarbonToolKit.svg";
 ---
 
 <section id="servicios" class="home-section">
@@ -17,22 +18,76 @@ const services = await fetchServices();
     </div>
     <div class="services-grid">
       <ul class="grid">
-        {
-          services.map((service) => {
-            const title = service.acf?.service_title || service.title.rendered;
-            const description = service.acf?.service_description || service.excerpt?.rendered;
-            const url = service.acf?.service_url || `/servicios/${service.slug}`;
-            return (
-              <li>
-                <article class="card cluster flow">
-                  <h3 set:html={title} />
-                  <p set:html={description} />
-                  <a href={url} class="button">Más información</a>
-                </article>
-              </li>
-            );
-          })
-        }
+        <li>
+          <article class="card cluster flow">
+            <div class="service-icon">
+              <WebIcon />
+            </div>
+            <h3>Diseño y Desarrollo Web</h3>
+            <p>
+              ¿Quieres una página web que hable por tu negocio? Te ayudo a crear
+              un sitio profesional, fácil de usar y que convierta visitantes en
+              clientes reales. Desde cero, mejorando lo que tienes, o trabajando
+              desde un diseño generado por IA — me adapto a tu forma de
+              trabajar.
+            </p>
+            <a href="/servicios/desarrollador-de-paginas-web" class="button"
+              >Más sobre web</a
+            >
+          </article>
+        </li>
+        <li>
+          <article class="card cluster flow">
+            <div class="service-icon">
+              <StoreIcon />
+            </div>
+            <h3>Tiendas Online (E-commerce)</h3>
+            <p>
+              ¿Listo para vender online? Creo tiendas seguras y fáciles que
+              venden solas. Gestiona inventario, pagos y envíos sin
+              complicaciones, para que tu negocio crezca 24/7.
+            </p>
+            <a
+              href="/servicios/desarrollador-de-tiendas-online"
+              class="button button-secondary">Más sobre Tiendas Online</a
+            >
+          </article>
+        </li>
+        <li>
+          <article class="card cluster flow">
+            <div class="service-icon">
+              <SearchIcon />
+            </div>
+            <h3>Optimización SEO</h3>
+            <p>
+              ¿Quieres que tu negocio aparezca primero en Google? Optimizo tu
+              web para que más personas te encuentren sin pagar anuncios.
+              Resultados reales: más visitas, más clientes, más crecimiento.
+            </p>
+            <a
+              href="/servicios/optimizacion-seo-y-posicionamiento"
+              class="button">Más sobre SEO</a
+            >
+          </article>
+        </li>
+        <li>
+          <article class="card cluster flow">
+            <div class="service-icon">
+              <ToolIcon />
+            </div>
+            <h3>Mantenimiento Web</h3>
+            <p>
+              ¿Tu sitio web te da dolores de cabeza? Olvídate de
+              actualizaciones, virus o caídas. Me encargo de todo para que
+              funcione perfecto, especialmente si usas WordPress. Tú enfócate en
+              tu negocio, yo cuido lo técnico.
+            </p>
+            <a
+              href="/servicios/mantenimiento-web"
+              class="button button-secondary">Más de Mantenimiento</a
+            >
+          </article>
+        </li>
       </ul>
     </div>
   </div>

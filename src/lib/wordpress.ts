@@ -1,4 +1,4 @@
-const WP_URL = import.meta.env.WORDPRESS_URL || "https://rafacalvodev.com/wp-json/wp/v2";
+const WP_URL = import.meta.env.WORDPRESS_URL || "https://cms.rafacalvodev.com/wp-json/wp/v2";
 
 export interface WordPressPost {
   id: number;

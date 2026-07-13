@@ -18,7 +18,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/mdx": "^7.0.2",
-    "@astrojs/node": "^11.0.2",
+    "@astrojs/netlify": "^8.1.1",
     "@iconify-json/lucide": "^1.2.68",
     "@lucide/astro": "^0.544.0",
     "accessible-astro-components": "^5.0.1",
