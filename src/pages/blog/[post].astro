@@ -1,6 +1,7 @@
 ---
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import { fetchPostBySlug } from "../../lib/wordpress";
+import { stripHtml, estimateReadingTime } from "../../utils/readingTime";
 
 const slug = Astro.params.post;
 const post = await fetchPostBySlug(slug || "");
@@ -8,11 +9,13 @@ const post = await fetchPostBySlug(slug || "");
 if (!post) {
   return Astro.redirect("/404");
 }
+const readingTime = estimateReadingTime(stripHtml(post.content.rendered));
 ---
 
 <DefaultLayout
   title={post.title.rendered}
-  image={post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "/social-preview-image.png"}
+  image={post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+    "/social-preview-image.png"}
 >
   <article id="blog-post">
     <div class="post-hero">
@@ -28,10 +31,18 @@ if (!post) {
           )
         }
         <h1 set:html={post.title.rendered} />
-        <div class="meta">
+        <div class="post-meta">
           <time datetime={post.date}>
-            {new Date(post.date).toLocaleDateString()}
+            {
+              new Date(post.date).toLocaleDateString("es-ES", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })
+            }
           </time>
+          🔹
+          <span>{readingTime} min de lectura</span>
         </div>
       </div>
     </div>
@@ -72,11 +83,6 @@ if (!post) {
     font-size: var(--step-1);
     color: var(--text-color-secondary);
     font-style: italic;
-  }
-
-  .meta {
-    font-size: var(--step--1);
-    color: inherit;
   }
 
   .tags {

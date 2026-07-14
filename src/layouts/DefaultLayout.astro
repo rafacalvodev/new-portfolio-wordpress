@@ -61,32 +61,32 @@ const { class: className, ...rest } = Astro.props;
         --font-family-default: "Lexend", sans-serif;
         --font-family-special: "Lexend", sans-serif;
         // light theme
-        --font-color: var(--dark-200);
-        --header-color: var(--neutral-100);
+        --font-color: var(--gray-950);
+        --header-color: var(--gray-100);
         --header-bg: var(--secondary-300);
-        --footer-color: var(--neutral-100);
+        --footer-color: var(--gray-100);
         --footer-bg: var(--secondary-300);
-        --action-color: var(--primary-300);
+        --action-color: var(--primary-500);
         --action-color-state: var(--primary-500);
-        --background: var(--neutral-100);
+        --background: var(--gray-100);
         --primary-background: var(--primary-100);
-        --neutral-background: var(--neutral-200);
-        --border-color-subtle: var(--neutral-500);
+        --gray-background: var(--gray-200);
+        --border-color-subtle: var(--gray-500);
 
         --flow-spacer: 1rem;
       }
 
       // dark color scheme overrides
       .darkmode {
-        --font-color: var(--neutral-100);
+        --font-color: var(--gray-100);
         --action-color: var(--secondary-100);
         --action-color-state: var(--secondary-500);
         --background: var(--dark-200);
         --header-bg: var(--background);
         --footer-bg: var(--background);
         --primary-background: var(--primary-500);
-        --neutral-background: var(--neutral-900);
-        --border-color-subtle: var(--neutral-600);
+        --gray-background: var(--gray-900);
+        --border-color-subtle: var(--gray-600);
       }
 
       // sticky footer on low content pages

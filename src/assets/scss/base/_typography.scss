@@ -40,56 +40,57 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 
-  a:not(.button) {
-    color: var(--action-color);
-    text-decoration: none;
+  // a:not(.button) {
+  //   color: var(--action-color);
+  //   text-decoration: none;
 
-    &:visited {
-      color: var(--action-color);
-    }
+  //   &:visited {
+  //     color: var(--action-color);
+  //   }
 
-    &:hover,
-    &:focus {
-      color: var(--action-color-state);
-      text-decoration: underline;
-    }
-  }
+  //   &:hover,
+  //   &:focus {
+  //     color: var(--action-color-state);
+  //     text-decoration: underline;
+  //   }
+  // }
 
-  @media (forced-colors: active) {
-    a:not(.button) {
-      color: LinkText;
-      text-decoration: underline;
+  // @media (forced-colors: active) {
+  //   a:not(.button) {
+  //     color: LinkText;
+  //     text-decoration: underline;
 
-      &:visited {
-        color: VisitedText;
-      }
+  //     &:visited {
+  //       color: VisitedText;
+  //     }
 
-      &:hover,
-      &:focus {
-        color: LinkText;
-      }
-    }
-  }
+  //     &:hover,
+  //     &:focus {
+  //       color: LinkText;
+  //     }
+  //   }
+  // }
 
   :where(main) a {
     word-wrap: break-word;
     word-break: break-word;
   }
 
-  :is(h1,h2,h3,h4) em {
-    font-style:normal
+  :is(h1, h2, h3, h4) em {
+    font-style: normal
   }
 
-  :is(h1,h2,h3,h4) a:not(:hover) {
-    text-decoration:none
+  :is(h1, h2, h3, h4) a:not(:hover) {
+    text-decoration: none
   }
 
   @media (min-width:50em) {
+
     h1,
     h2,
     h3,
     h4 {
-      overflow-wrap:unset
+      overflow-wrap: unset
     }
   }
 

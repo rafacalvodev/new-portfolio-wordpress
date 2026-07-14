@@ -2,6 +2,9 @@
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import Pagination from "../../components/Pagination.astro";
 import { fetchPosts } from "../../lib/wordpress";
+import { stripHtml, estimateReadingTime } from "../../utils/readingTime";
+
+import VisitPost from "../../assets/icons/misc/CarbonArrowRight.svg";
 
 const pageParam = Astro.params.page;
 const currentPage = pageParam ? parseInt(pageParam) : 1;
@@ -26,7 +29,12 @@ const totalPagesCount = Math.ceil(totalPosts / perPage);
       <div class="grid">
         {
           posts.map((post) => {
-            const featuredImage = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+            const featuredImage =
+              post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+            const description = stripHtml(post.excerpt.rendered);
+            const readingTime = estimateReadingTime(
+              stripHtml(post.content.rendered),
+            );
             return (
               <article class="flow | card">
                 {featuredImage && (
@@ -37,16 +45,20 @@ const totalPagesCount = Math.ceil(totalPosts / perPage);
                     loading="lazy"
                   />
                 )}
-                <div class="blog-card__content flex">
+                <div class="blog-card__content | flex">
                   <h2 class="blog-card__title">
-                    <a href={`/blog/${post.slug}`} set:html={post.title.rendered} />
+                    <a
+                      href={`/blog/${post.slug}`}
+                      set:html={post.title.rendered}
+                    />
                   </h2>
-                  <p class="blog-card__description" set:html={post.excerpt.rendered} />
-                  <div class="blog-card__meta">
-                    <time datetime={post.date}>
-                      {new Date(post.date).toLocaleDateString()}
-                    </time>
-                  </div>
+                  <p
+                    class="blog-card__description"
+                    set:html={post.excerpt.rendered}
+                  />
+                  <a class="button" href={`/blog/${post.slug}`}>
+                    Leer más <VisitPost />
+                  </a>
                 </div>
               </article>
             );
@@ -60,7 +72,9 @@ const totalPagesCount = Math.ceil(totalPosts / perPage);
       <Pagination
         basePath="/blog"
         previousPage={currentPage > 1 ? `/blog/${currentPage - 1}` : null}
-        nextPage={currentPage < totalPagesCount ? `/blog/${currentPage + 1}` : null}
+        nextPage={currentPage < totalPagesCount
+          ? `/blog/${currentPage + 1}`
+          : null}
         currentPage={currentPage}
         totalPages={totalPagesCount}
       />
@@ -81,27 +95,30 @@ const totalPagesCount = Math.ceil(totalPosts / perPage);
     align-items: flex-start;
   }
 
-  .blog-card {
-    &__image {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
+  // .blog-card {
+  //   &__image {
+  //     width: 100%;
+  //     height: 200px;
+  //     object-fit: cover;
+  //   }
 
-    &__title a {
-      color: inherit;
-      text-decoration: none;
-    }
+  //   &__title a {
+  //     color: inherit;
+  //     text-decoration: none;
+  //   }
 
-    &__title a:hover {
-      text-decoration: underline;
-      text-decoration-style: wavy;
-      text-decoration-thickness: 1px;
-    }
+  //   &__title a:hover {
+  //     text-decoration: underline;
+  //     text-decoration-style: wavy;
+  //     text-decoration-thickness: 1px;
+  //   }
 
-    &__meta {
-      font-size: var(--step--1);
-      margin-top: auto;
-    }
-  }
+  //   &__meta {
+  //     gap: var(--space-xs);
+  //     font-size: var(--step--1);
+  //     color: var(--text-200);
+  //     margin-bottom: var(--space-xs);
+  //     flex-direction: row;
+  //   }
+  // }
 </style>

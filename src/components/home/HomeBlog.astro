@@ -1,15 +1,9 @@
 ---
 import { fetchPosts } from "../../lib/wordpress";
+import { stripHtml, estimateReadingTime } from "../../utils/readingTime";
+import VisitPost from "../../assets/icons/misc/CarbonArrowRight.svg";
 
 const { posts } = await fetchPosts(3, 1);
-
-function stripHtml(html: string): string {
-  return html.replace(/<[^>]*>/g, "");
-}
-
-function estimateReadingTime(content: string): number {
-  return Math.max(1, Math.ceil(content.split(" ").length / 200));
-}
 ---
 
 <section class="home-section | blog-section">
@@ -21,9 +15,12 @@ function estimateReadingTime(content: string): number {
     <ul class="grid">
       {
         posts.map((post) => {
-          const featuredImage = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+          const featuredImage =
+            post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
           const description = stripHtml(post.excerpt.rendered);
-          const readingTime = estimateReadingTime(post.content.rendered);
+          const readingTime = estimateReadingTime(
+            stripHtml(post.content.rendered),
+          );
           return (
             <li>
               <article class="card flow">
@@ -36,15 +33,10 @@ function estimateReadingTime(content: string): number {
                   />
                 )}
                 <h3 set:html={post.title.rendered} />
-                <p>{description}</p>
-                <div class="blog-card__meta | flex">
-                  <time datetime={post.date}>
-                    {new Date(post.date).toLocaleDateString()}
-                  </time>
-                  <span>{readingTime} min de lectura</span>
-                </div>
+                <p class="blog-card__description">{description}</p>
+
                 <a class="button" href={`/blog/${post.slug}`}>
-                  Leer más
+                  Leer más <VisitPost />
                 </a>
               </article>
             </li>
@@ -64,19 +56,19 @@ function estimateReadingTime(content: string): number {
       --minimun: 30ch;
     }
 
-    .blog-card__image {
-      width: 100%;
-      height: auto;
-      border-radius: 0.25em;
-      margin-bottom: var(--space-xs);
-    }
+    // .blog-card__image {
+    //   width: 100%;
+    //   height: auto;
+    //   border-radius: 0.25em;
+    //   margin-bottom: var(--space-xs);
+    // }
 
-    .blog-card__meta {
-      gap: var(--space-xs);
-      font-size: var(--step--1);
-      color: var(--text-200);
-      margin-bottom: var(--space-xs);
-    }
+    // .blog-card__meta {
+    //   gap: var(--space-xs);
+    //   font-size: var(--step--1);
+    //   color: var(--text-200);
+    //   margin-bottom: var(--space-xs);
+    // }
 
     .home-section__footer {
       text-align: center;
