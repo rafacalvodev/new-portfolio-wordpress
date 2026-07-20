@@ -14,9 +14,9 @@ import HomeHeroImage from "./HomeHeroImage.astro";
         digital profesional, fácil de manejar y optimizada para que tus clientes
         te encuentren sin importar dónde estén.
       </p>
-      <div class="home-buttons">
+      <div class="home-buttons | flex">
         <a href="#servicios" class="button button-primary">Servicios</a>
-        <a href="#contacto" class="button button-secondary">
+        <a href="/contacto/" class="button button-secondary">
           Ponerse en Contacto</a
         >
       </div>
@@ -27,9 +27,16 @@ import HomeHeroImage from "./HomeHeroImage.astro";
   </section>
 </div>
 
-<style>
+<style lang="scss">
   .hero {
     margin: 5rem 0;
+  }
+
+  .hero__text {
+    .flex {
+      flex-wrap: wrap;
+      justify-content: start;
+    }
   }
 
   .grid {
