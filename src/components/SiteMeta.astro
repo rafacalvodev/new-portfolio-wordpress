@@ -4,9 +4,25 @@ import { ClientRouter } from "astro:transitions";
 const { title, description, url, image, author } = Astro.props;
 
 let subtitle = "Desarrollador Web Freelance";
+let twitterHandle = "@rafacalvodev";
 let pageUrl = url || Astro.site;
 let imageUrl = `${Astro.site}${image || "/social-preview-image.png"}`;
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  url: pageUrl,
+  name: title || subtitle,
+  description: description || "",
+  author: {
+    "@type": "Person",
+    name: author || subtitle,
+  },
+  publisher: {
+    "@type": "Organization",
+    name: subtitle,
+  },
+};
 ---
 
 <!-- general meta -->
@@ -22,31 +38,22 @@ let imageUrl = `${Astro.site}${image || "/social-preview-image.png"}`;
 <meta property="og:type" content="website" />
 <meta property="og:url" content={pageUrl} />
 <meta property="og:image" content={imageUrl} />
+<meta property="og:locale" content="es_ES" />
 
 <!-- twitter card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={`${title} - ${subtitle}`} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={imageUrl} />
+<meta name="twitter:site" content={twitterHandle} />
+<meta name="twitter:creator" content={twitterHandle} />
 
 <!-- JSON-LD structured data -->
-<script type="application/ld+json" is:inline>
-{JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "url": pageUrl,
-  "name": title,
-  "description": description,
-  "author": {
-    "@type": "Person",
-    "name": author,
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": subtitle,
-  },
-})}
-</script>
+<script
+  type="application/ld+json"
+  is:inline
+  set:html={JSON.stringify(schema)}
+/>
 
 <!-- page title -->
 <title>{title} - {subtitle}</title>

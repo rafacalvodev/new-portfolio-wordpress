@@ -24,7 +24,7 @@ const readingTime = estimateReadingTime(stripHtml(post.content.rendered));
           post._embedded?.["wp:featuredmedia"]?.[0]?.source_url && (
             <img
               src={post._embedded["wp:featuredmedia"][0].source_url}
-              alt={post.title.rendered}
+              alt={`Imagen destacada: ${post.title.rendered}`}
               class="blog-card__image"
               loading="lazy"
             />
@@ -52,6 +52,30 @@ const readingTime = estimateReadingTime(stripHtml(post.content.rendered));
       </div>
     </div>
   </article>
+
+  <script type="application/ld+json" is:inline>
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title.rendered,
+      "description": post.excerpt?.rendered?.replace(/<[^>]*>/g, "").substring(0, 155),
+      "image": post._embedded?.["wp:featuredmedia"]?.[0]?.source_url,
+      "author": {
+        "@type": "Person",
+        "name": "Rafael Calvo",
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Rafael Calvo - Desarrollador Web Freelance",
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${Astro.site}favicon.svg`,
+        },
+      },
+      "datePublished": post.date,
+      "dateModified": post.modified || post.date,
+    })}
+  </script>
 </DefaultLayout>
 
 <style lang="scss">
