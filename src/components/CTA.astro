@@ -1,10 +1,30 @@
-<div class="container">
-  <div
-    class="call-to-action mt-24 mb-32 flex flex-col items-center gap-12 rounded-xl p-12 md:p-24"
-  >
-    <h2 class="text-center text-3xl md:text-5xl">
-      ¡Hagamos crecer tu negocio en línea juntos
-    </h2>
-    <a href="/contacto/" class="button"> Contacto</a>
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-section__content">
+      <h2>¡Hagamos crecer tu negocio en línea juntos!</h2>
+      <a href="/contacto/" class="button">Contacto</a>
+    </div>
   </div>
-</div>
+</section>
+
+<style lang="scss">
+  .cta-section {
+    padding-block: var(--section-spacing);
+    text-align: center;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-l);
+      padding: var(--space-l);
+      background-color: var(--primary-100);
+      border-radius: 0.75rem;
+    }
+
+    h2 {
+      max-width: 30ch;
+      font-size: var(--step-3);
+    }
+  }
+</style>
