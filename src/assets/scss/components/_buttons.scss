@@ -16,7 +16,7 @@
     border-color 0.15s ease-in-out;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     text-decoration: underline;
     background-color: var(--primary-900);
     border-color: var(--primary-900);
@@ -29,10 +29,10 @@
 
   &.button-secondary {
     background-color: var(--alert-100);
-    border-color: (var(--alert-100));
+    border-color: var(--alert-100);
 
     &:hover,
-    &:focus {
+    &:focus-visible {
       background-color: var(--alert-400);
       border-color: var(--alert-400);
     }
