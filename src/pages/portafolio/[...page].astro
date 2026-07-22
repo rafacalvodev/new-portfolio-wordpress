@@ -5,6 +5,8 @@ import { getCollection } from "astro:content";
 import type { GetStaticPaths, Page } from "astro";
 import type { CollectionEntry } from "astro:content";
 import VisitSite from "../../assets/icons/misc/CarbonArrowUpRight.svg";
+import ContactSection from "../../components/page/ContactSection.astro";
+import PageBanner from "../../components/page/PageBanner.astro";
 
 export const prerender = true;
 
@@ -20,22 +22,12 @@ interface Props {
 const { page } = Astro.props;
 ---
 
-<DefaultLayout
-  title="Portfolio"
-  description="An example of a portfolio using the Astro Content Collections."
->
-  <section class="portfolio-header">
-    <div class="container | flow">
-      <h1>Portfolio</h1>
-      <p>
-        An example of a portfolio built using Astro Content Collections,
-        showcasing how to organize and display projects dynamically. Check out <a
-          href="https://docs.astro.build/en/guides/content-collections/"
-          >Astro Content Collections</a
-        > in the Astro Docs to learn more.
-      </p>
-    </div>
-  </section>
+<DefaultLayout>
+  <PageBanner
+    title="Portafolio de Proyectos"
+    description="Todos los proyectos que salen aquí son desarrollados por mí, desde el diseño hasta la implementación. Si quieres que tu proyecto sea desarrollado con la misma calidad y atención al detalle, no dudes en contactarme."
+    background="linear-gradient(90deg, #7debf2, #60a4ff)"
+  />
   <section class="projects-section">
     <div class="container">
       <!-- <p>
@@ -81,6 +73,8 @@ const { page } = Astro.props;
       />
     </div>
   </div>
+
+  <ContactSection />
 </DefaultLayout>
 
 <style lang="scss">

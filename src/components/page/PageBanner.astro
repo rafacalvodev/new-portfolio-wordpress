@@ -1,8 +1,13 @@
 ---
-const { class: className, ...rest } = Astro.props;
+const { class: className, background, ...rest } = Astro.props;
 ---
 
-<section id="page-banner" class={className} {...rest}>
+<section
+  id="page-banner"
+  class={className}
+  style={background ? `background: ${background};` : undefined}
+  {...rest}
+>
   <div class="container">
     <div class="flex">
       <div class="flow | page-banner__content">
@@ -16,22 +21,22 @@ const { class: className, ...rest } = Astro.props;
   </div>
 </section>
 
-
 <style lang="scss">
-  @use '../../assets/scss/abstracts/_mixins.scss' as *;
-  @use '../../assets/scss/abstracts/breakpoints.scss' as *;
+  @use "../../assets/scss/abstracts/_mixins.scss" as *;
+  @use "../../assets/scss/abstracts/breakpoints.scss" as *;
 
   #page-banner {
     padding: 4em 0;
+    margin-block-end: 2rem;
 
     .flex {
       flex-wrap: wrap;
     }
 
-    @include breakpoint('nav') {
+    @include breakpoint("nav") {
       .page-banner__content {
         max-width: 70%;
       }
     }
-  }  
+  }
 </style>
