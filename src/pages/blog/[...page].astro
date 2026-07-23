@@ -18,12 +18,14 @@ const totalPagesCount = Math.ceil(totalPosts / perPage);
   title={`Blog${currentPage > 1 ? ` – Página ${currentPage}` : ""}`}
   description="Lee mis últimas reflexiones sobre desarrollo web y diseño."
 >
-  <header class="blog-header">
+  <section id="page-banner" class="blog-banner">
     <div class="container">
-      <h1>Blog</h1>
-      <p>Lee mis últimas reflexiones sobre desarrollo web y diseño.</p>
+      <div class="flex">
+        <h1>Blog de Rafa</h1>
+        <p>lorem ipsum dolor sit amet</p>
+      </div>
     </div>
-  </header>
+  </section>
   <section class="blog-posts">
     <div class="container">
       <ul class="grid">
