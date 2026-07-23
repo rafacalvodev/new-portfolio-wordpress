@@ -28,13 +28,13 @@
           class="form flow"
         >
           <input type="hidden" name="form-name" value="contact" />
-          <p class="sr-only" aria-hidden="true">
+          <p class="sr-only">
             <label for="bot-field">No rellenar este campo.</label>
-            <input id="bot-field" name="bot-field" />
+            <input id="bot-field" name="bot-field" tabindex="-1" />
           </p>
           <div>
             <label for="name"
-              >Nombre: <span aria-label="requerido">*</span></label
+              >Nombre: <span class="sr-only">requerido</span>*</label
             >
             <input
               type="text"
@@ -46,7 +46,7 @@
           </div>
           <div>
             <label for="email"
-              >Email: <span aria-label="requerido">*</span></label
+              >Email: <span class="sr-only">requerido</span>*</label
             >
             <input
               type="email"

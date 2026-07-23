@@ -26,7 +26,7 @@ const totalPagesCount = Math.ceil(totalPosts / perPage);
   </header>
   <section class="blog-posts">
     <div class="container">
-      <div class="grid">
+      <ul class="grid">
         {
           posts.map((post) => {
             const featuredImage =
@@ -36,35 +36,39 @@ const totalPagesCount = Math.ceil(totalPosts / perPage);
               stripHtml(post.content.rendered),
             );
             return (
-              <article class="flow | card">
-                {featuredImage && (
-                  <img
-                    src={featuredImage}
-                    alt={post.title.rendered}
-                    class="blog-card__image"
-                    loading="lazy"
-                  />
-                )}
-                <div class="blog-card__content | flex">
-                  <h2 class="blog-card__title">
-                    <a
-                      href={`/blog/${post.slug}`}
-                      set:html={post.title.rendered}
+              <li>
+                <article class="card | flow">
+                  {featuredImage && (
+                    <img
+                      src={featuredImage}
+                      alt={post.title.rendered}
+                      class="blog-card__image"
+                      loading="lazy"
                     />
-                  </h2>
-                  <p
-                    class="blog-card__description"
-                    set:html={post.excerpt.rendered}
-                  />
-                  <a class="button" href={`/blog/${post.slug}`}>
-                    Leer más <VisitPost />
-                  </a>
-                </div>
-              </article>
+                  )}
+                  <div class="blog-card__content | flex">
+                    <h2 class="blog-card__title">
+                      <a
+                        href={`/blog/${post.slug}`}
+                        set:html={post.title.rendered}
+                      />
+                    </h2>
+                    <p
+                      class="blog-card__description"
+                      set:html={post.excerpt.rendered}
+                    />
+                  </div>
+                  <div class="blog-card__link">
+                    <a class="button" href={`/blog/${post.slug}`}>
+                      Leer más <VisitPost />
+                    </a>
+                  </div>
+                </article>
+              </li>
             );
           })
         }
-      </div>
+      </ul>
     </div>
   </section>
   <div id="pagination">
@@ -86,6 +90,9 @@ const totalPagesCount = Math.ceil(totalPosts / perPage);
   @use "../../assets/scss/abstracts/colors.scss" as *;
 
   .grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     --minimun: 28ch;
   }
 

@@ -1,6 +1,6 @@
 ---
 import Navigation from '../components/Navigation.astro'
-import { DarkMode, Link, SkipLink } from 'accessible-astro-components'
+import { DarkMode, Link } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
 
 /**
@@ -11,7 +11,6 @@ import { Icon } from 'astro-icon/components'
 ---
 
 <header role="banner" class="site-header">
-  <SkipLink />
   <Navigation>
     <li class="menu-item">
       <Link href="/">Inicio</Link>
