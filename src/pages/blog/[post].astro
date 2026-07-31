@@ -17,8 +17,8 @@ const readingTime = estimateReadingTime(stripHtml(post.content.rendered));
   image={post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
     "/social-preview-image.png"}
 >
-  <article id="blog-post">
-    <div class="post-hero">
+  <div id="blog-post">
+    <section class="post-hero">
       <div class="container | flow">
         {
           post._embedded?.["wp:featuredmedia"]?.[0]?.source_url && (
@@ -45,13 +45,13 @@ const readingTime = estimateReadingTime(stripHtml(post.content.rendered));
           <span>{readingTime} min de lectura</span>
         </div>
       </div>
-    </div>
+    </section>
     <div class="post-content">
       <div class="container">
         <div class="flow | prose" set:html={post.content.rendered} />
       </div>
     </div>
-  </article>
+  </div>
 
   <script type="application/ld+json" is:inline>
     {JSON.stringify({
@@ -88,19 +88,27 @@ const readingTime = estimateReadingTime(stripHtml(post.content.rendered));
       font-family: "Lexend", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    h2,
-    h3,
-    h4 {
-      font-family: "Piazzolla", Georgia, "Times New Roman", Times, serif;
+    // h2,
+    // h3,
+    // h4 {
+    //   font-family: "Piazzolla", Georgia, "Times New Roman", Times, serif;
+    // }
+
+    ul:where([class]) {
+      list-style: disc;
     }
-  }
+
+    ol, ul {
+      padding-left: var(--space-s);
+    }
+}
 
   article {
-    margin-block: 2rem;
+    margin-block: var(--space-m);
   }
 
   .post-hero {
-    margin-block: 2rem;
+    margin-block: var(--space-m);
   }
 
   .description {
@@ -121,7 +129,7 @@ const readingTime = estimateReadingTime(stripHtml(post.content.rendered));
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
     font-size: var(--step--2);
-    color: black;
+    color: var(--gray-900);
   }
 
   .prose {
@@ -135,19 +143,5 @@ const readingTime = estimateReadingTime(stripHtml(post.content.rendered));
 
   .prose :global(p) {
     margin-bottom: 1rem;
-  }
-
-  .prose :global(code) {
-    background: var(--background-color-secondary);
-    padding: 0.125rem 0.25rem;
-    border-radius: 3px;
-    font-family: monospace;
-  }
-
-  .prose :global(pre) {
-    background: var(--background-color-secondary);
-    padding: 1rem;
-    border-radius: 6px;
-    overflow-x: auto;
   }
 </style>

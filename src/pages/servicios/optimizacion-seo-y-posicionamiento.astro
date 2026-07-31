@@ -39,7 +39,7 @@ import ContactSection from "../../components/page/ContactSection.astro";
       </div>
     </div>
   </section>
-  <section class="page-section">
+  <section class="page-section | benefits">
     <div class="container">
       <div class="flow">
         <h2>Técnicas de Optimización SEO</h2>
@@ -284,10 +284,31 @@ import ContactSection from "../../components/page/ContactSection.astro";
 </DefaultLayout>
 
 <style lang="scss">
-  @use "../../assets/scss/abstracts/colors.scss" as *;
+  @use "../../assets/scss/abstracts" as *;
 
   .light-cyan-bg {
     background-color: #92eef3;
     color: var(--gray-900);
+  }
+
+  .seo-page {
+    --section-spacing: var(--space-l);
+
+    .benefits {
+      article ul {
+        list-style: disc;
+        padding-left: var(--space-s);
+      }
+    }
+
+    .grid {
+      --minimun: 40ch;
+      column-gap: 2rem;
+    }
+
+    .gray-bg {
+      color: var(--gray-900);
+      background-color: var(--gray-200);
+    }
   }
 </style>
