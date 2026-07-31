@@ -93,6 +93,14 @@ const readingTime = estimateReadingTime(stripHtml(post.content.rendered));
     // h4 {
     //   font-family: "Piazzolla", Georgia, "Times New Roman", Times, serif;
     // }
+
+    ul {
+      list-style: disc;
+    }
+
+    ol, ul {
+      padding-left: var(--space-s);
+    }
 }
 
   article {
@@ -122,16 +130,6 @@ const readingTime = estimateReadingTime(stripHtml(post.content.rendered));
     border-radius: 4px;
     font-size: var(--step--2);
     color: var(--gray-900);
-  }
-
-  .post-content {
-    ul {
-      list-style: disc;
-    }
-
-    ol, ul {
-      padding-left: var(--space-s);
-    }
   }
 
   .prose {
