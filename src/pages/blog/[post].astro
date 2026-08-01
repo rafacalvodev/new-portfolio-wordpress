@@ -125,11 +125,11 @@ const readingTime = estimateReadingTime(stripHtml(post.content.rendered));
   }
 
   .post-content {
-    ul .wp-block-list {
+    ul:where([class]) {
       list-style: disc !important;
     }
 
-    ol .wp-block-list, ul .wp-block-list {
+    ol:where([class]), ul:where([class]) {
       padding-left: var(--space-s) !important;
     }
   }
