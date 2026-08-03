@@ -8,7 +8,7 @@ const featuredProjects = projects.filter(
 );
 ---
 
-<section class="home-section | projects-section">
+<section id="proyectos" class="home-section | projects-section">
   <div class="container">
     <div class="home-section__header | flow">
       <h2>Algunos de los proyectos en los que he trabajado</h2>
@@ -81,6 +81,12 @@ const featuredProjects = projects.filter(
     .features-list {
       list-style-type: disc;
       padding-left: 1em;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
   }
 </style>

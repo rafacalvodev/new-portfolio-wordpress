@@ -33,17 +33,15 @@ h5,
 h6,
 hr,
 li,
-ol,
 p,
-pre,
-ul {
+pre {
   margin: 0;
   padding: 0;
 }
 
-ul:where([class]) {
-  list-style: none;
-}
+// ul:where([class]) {
+//   list-style: none;
+// }
 
 button,
 input,

@@ -125,10 +125,6 @@ const readingTime = estimateReadingTime(stripHtml(post.content.rendered));
   }
 
   .post-content {
-    ul:where([class]) {
-      list-style: disc !important;
-    }
-
     ol:where([class]), ul:where([class]) {
       padding-left: var(--space-s) !important;
     }

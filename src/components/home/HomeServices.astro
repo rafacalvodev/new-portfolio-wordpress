@@ -5,7 +5,7 @@ import SearchIcon from "../../assets/icons/services/CarbonQuery.svg";
 import ToolIcon from "../../assets/icons/services/CarbonToolKit.svg";
 ---
 
-<section id="servicios" class="home-section">
+<section id="servicios" class="home-section | services-section">
   <div class="container | flow">
     <div class="home-section__header | flow">
       {Astro.props.title && <h2>{Astro.props.title}</h2>}
@@ -94,20 +94,28 @@ import ToolIcon from "../../assets/icons/services/CarbonToolKit.svg";
 </section>
 
 <style lang="scss">
-  .cluster {
-    align-items: stretch;
-  }
+  .services-section {
+    .cluster {
+      align-items: stretch;
+    }
 
-  .service-icon {
-    svg {
-      max-width: 100%;
-      width: 5em;
-      height: 5em;
+    .service-icon {
+      svg {
+        max-width: 100%;
+        width: 5em;
+        height: 5em;
 
-      path,
-      circle {
-        fill: var(--alert-100);
+        path,
+        circle {
+          fill: var(--alert-100);
+        }
       }
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
   }
 </style>
