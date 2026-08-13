@@ -1,6 +1,7 @@
 ---
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import Pagination from "../../components/Pagination.astro";
+import BlogBanner from "../../components/BlogBanner.astro";
 import { fetchPosts } from "../../lib/wordpress";
 import { stripHtml, estimateReadingTime } from "../../utils/readingTime";
 
@@ -16,16 +17,13 @@ const totalPagesCount = Math.ceil(totalPosts / perPage);
 
 <DefaultLayout
   title={`Blog${currentPage > 1 ? ` – Página ${currentPage}` : ""}`}
-  description="Lee mis últimas reflexiones sobre desarrollo web y diseño."
+  description="Reflexiones sobre el desarrollo actual, guías de rendimiento y aprendizajes reales para entender tu infraestructura web antes de tomar decisiones técnicas."
 >
-  <section id="page-banner" class="blog-banner">
-    <div class="container">
-      <div class="flex">
-        <h1>Blog de Rafa</h1>
-        <p>lorem ipsum dolor sit amet</p>
-      </div>
-    </div>
-  </section>
+  <BlogBanner
+    title="Bitácora Web: WordPress, Código & Perspectiva"
+    description="Reflexiones sobre el desarrollo actual, guías de rendimiento y aprendizajes reales para entender tu infraestructura web antes de tomar decisiones técnicas."
+    class="blog-banner"
+  />
   <section class="blog-posts">
     <div class="container">
       <ul class="grid">
@@ -102,6 +100,10 @@ const totalPagesCount = Math.ceil(totalPosts / perPage);
     justify-content: space-between;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .blog-banner {
+    background-color: var(--blue-300);
   }
 
   // .blog-card {

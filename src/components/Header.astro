@@ -1,7 +1,7 @@
 ---
-import Navigation from '../components/Navigation.astro'
-import { DarkMode, Link } from 'accessible-astro-components'
-import { Icon } from 'astro-icon/components'
+import Navigation from "../components/Navigation.astro";
+import { DarkMode, Link } from "accessible-astro-components";
+import { Icon } from "astro-icon/components";
 
 /**
  * Header Component
@@ -28,13 +28,19 @@ import { Icon } from 'astro-icon/components'
       </button>
       <ul class="dropdown-menu">
         <li class="submenu-item">
-          <Link href="/servicios/desarrollador-de-paginas-web">Creación de Páginas Web</Link>
+          <Link href="/servicios/desarrollador-de-paginas-web"
+            >Creación de Páginas Web</Link
+          >
         </li>
         <li class="submenu-item">
-          <Link href="/servicios/desarrollador-de-tiendas-online">Creación de Tiendas Online</Link>
+          <Link href="/servicios/desarrollador-de-tiendas-online"
+            >Creación de Tiendas Online</Link
+          >
         </li>
         <li class="submenu-item">
-          <Link href="/servicios/optimizacion-seo-y-posicionamiento">SEO y Optimización Web</Link>
+          <Link href="/servicios/optimizacion-seo-y-posicionamiento"
+            >SEO y Optimización Web</Link
+          >
         </li>
         <li class="submenu-item">
           <Link href="/servicios/mantenimiento-web">Mantenimiento Web</Link>
@@ -54,14 +60,14 @@ import { Icon } from 'astro-icon/components'
 </header>
 
 <style lang="scss" is:global>
-  @use '../assets/scss/abstracts/colors.scss' as *;
+  @use "../assets/scss/abstracts/colors.scss" as *;
 
   .site-header {
     background-color: var(--header-bg);
     padding-block: var(--space-xs-s);
-    border-bottom: 0.3em solid var(--alert-100);
+    border-bottom: 0.3em solid var(--yellow-100);
     //border: 0.2em solid var(--alert-100);
-    
+
     .type-icon {
       display: block;
       margin-inline: -7px;

@@ -78,13 +78,13 @@ const { class: className, ...rest } = Astro.props;
         // light theme
         --font-color: var(--gray-950);
         --header-color: var(--gray-100);
-        --header-bg: var(--secondary-300);
+        --header-bg: var(--blue-800);
         --footer-color: var(--gray-100);
-        --footer-bg: var(--secondary-300);
-        --action-color: var(--primary-500);
-        --action-color-state: var(--primary-500);
+        --footer-bg: var(--blue-800);
+        --action-color: var(--red-500);
+        --action-color-state: var(--red-500);
         --background: var(--gray-100);
-        --primary-background: var(--primary-100);
+        --primary-background: var(--red-100);
         --gray-background: var(--gray-200);
         --border-color-subtle: var(--gray-500);
 
@@ -102,12 +102,12 @@ const { class: className, ...rest } = Astro.props;
       // dark color scheme overrides
       .darkmode {
         --font-color: var(--gray-100);
-        --action-color: var(--secondary-100);
-        --action-color-state: var(--secondary-500);
+        --action-color: var(--blue-100);
+        --action-color-state: var(--blue-500);
         --background: var(--dark-200);
         --header-bg: var(--background);
         --footer-bg: var(--background);
-        --primary-background: var(--primary-500);
+        --primary-background: var(--red-500);
         --gray-background: var(--gray-900);
         --border-color-subtle: var(--gray-600);
       }
