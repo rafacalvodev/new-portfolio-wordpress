@@ -104,9 +104,9 @@ const { class: className, ...rest } = Astro.props;
         --font-color: var(--gray-100);
         --action-color: var(--blue-100);
         --action-color-state: var(--blue-500);
-        --background: var(--dark-200);
-        --header-bg: var(--background);
-        --footer-bg: var(--background);
+        --background: var(--gray-800);
+        --header-bg: var(--blue-900);
+        --footer-bg: var(--blue-900);
         --primary-background: var(--red-500);
         --gray-background: var(--gray-900);
         --border-color-subtle: var(--gray-600);
@@ -145,7 +145,7 @@ const { class: className, ...rest } = Astro.props;
           background-color: var(--action-color-state);
 
           svg path {
-            stroke: white;
+            stroke: var(--gray-50);
           }
         }
       }

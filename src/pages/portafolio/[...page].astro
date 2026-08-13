@@ -26,7 +26,7 @@ const { page } = Astro.props;
   <PageBanner
     title="Portafolio de Proyectos"
     description="Todos los proyectos que salen aquí son desarrollados por mí, desde el diseño hasta la implementación. Si quieres que tu proyecto sea desarrollado con la misma calidad y atención al detalle, no dudes en contactarme."
-    background="linear-gradient(90deg, #7debf2, #60a4ff)"
+    class="portfolio-banner"
   />
   <section class="projects-section">
     <div class="container">
@@ -78,6 +78,10 @@ const { page } = Astro.props;
 </DefaultLayout>
 
 <style lang="scss">
+  .portfolio-banner {
+    background-color: linear-gradient(90deg, #7debf2, #60a4ff);
+    color: var(--gray-950);
+  }
   .projects-section {
     margin-block-end: 2rem;
 
