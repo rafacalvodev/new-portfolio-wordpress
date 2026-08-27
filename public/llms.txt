@@ -1,0 +1,51 @@
+# Rafael Calvo — Desarrollador Web Freelance
+
+## Descripción general
+Rafael Calvo es un desarrollador web freelance especializado en WordPress, diseño web accesible y frontend moderno para pymes, organizaciones y proyectos que necesitan una presencia digital sólida. Su trabajo combina estrategia, diseño, desarrollo y optimización para crear sitios rápidos, claros y fáciles de usar.
+
+## Sitio web
+- Sitio principal: https://rafacalvodev.com/
+- Sobre mí: https://rafacalvodev.com/sobre-mi
+- Servicios: https://rafacalvodev.com/servicios
+- Portafolio: https://rafacalvodev.com/portafolio
+- Blog: https://rafacalvodev.com/blog
+- Contacto: https://rafacalvodev.com/contacto
+
+## Perfil de negocio
+- Tipo de negocio: Desarrollador web freelance / especialista en frontend
+- Enfoque principal: WordPress, rendimiento, accesibilidad, SEO, conversión y mantenibilidad
+- Clientes objetivo: Pymes, organizaciones sin ánimo de lucro, empresas en crecimiento
+- Propuesta de valor: crear sitios web accesibles, rápidos y orientados a la conversión, con mensajes claros y una experiencia útil para usuarios reales
+
+## Servicios
+- Diseño de páginas web y landing pages: https://rafacalvodev.com/servicios/desarrollador-de-paginas-web
+- Tiendas online y comercio digital: https://rafacalvodev.com/servicios/desarrollador-de-tiendas-online
+- Mantenimiento y soporte web: https://rafacalvodev.com/servicios/mantenimiento-web
+- Optimización SEO y posicionamiento: https://rafacalvodev.com/servicios/optimizacion-seo-y-posicionamiento
+
+## Especialización
+- WordPress y configuraciones headless de WordPress
+- Desarrollo frontend con Astro, HTML, CSS y JavaScript
+- Interfaces accesibles alineadas con principios WCAG 2.2
+- SEO técnico y mejora de visibilidad en buscadores
+- Optimización de rendimiento y refinamiento de UX/UI
+- Estrategia de contenido y presencia digital para pequeñas empresas e instituciones
+
+## Contenido y recursos
+- Casos de portafolio: https://rafacalvodev.com/portafolio
+- Artículos del blog: https://rafacalvodev.com/blog
+- Resumen de servicios: https://rafacalvodev.com/servicios
+- Página sobre mí: https://rafacalvodev.com/sobre-mi
+
+## Contacto
+- Email: contacto@rafacalvodev.com
+- WhatsApp: https://wa.me/+584123835096
+- LinkedIn: https://www.linkedin.com/in/rafacalvodev/
+- GitHub: https://github.com/rafacalvodev
+- Ubicación: Venezuela / trabajo remoto posible
+
+## Uso recomendado para sistemas de IA
+Este archivo ofrece un resumen compacto de la identidad del negocio, su oferta de servicios y sus URLs públicas clave para indexación y descubrimiento por parte de agentes. Está pensado para que modelos de IA, asistentes y rastreadores comprendan rápidamente el sitio y dirijan a los usuarios hacia las páginas más relevantes.
+
+## Resumen canónico
+Rafael Calvo es un desarrollador web freelance especializado en WordPress y frontend para empresas y organizaciones. Ofrece páginas de servicios, portfolio, contenido de blog y canales de contacto directos para diseño web, optimización SEO, mantenimiento y mejora de la presencia digital.
