@@ -2,9 +2,14 @@
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import ServiceBanner from "../../components/page/PageBanner.astro";
 import ContactSection from "../../components/page/ContactSection.astro";
+
+const title =
+  "Desarrollo de páginas web — Sitios accesibles y rápidos | Rafael Calvo";
+const description =
+  "Diseño y desarrollo de sitios web accesibles, responsive y optimizados para rendimiento y SEO. Proyectos personalizados para tu negocio.";
 ---
 
-<DefaultLayout>
+<DefaultLayout title={title} description={description}>
   <div class="web-development">
     <ServiceBanner
       title="Desarrollo web de sitios personales y corporativos"
@@ -255,7 +260,7 @@ import ContactSection from "../../components/page/ContactSection.astro";
                   mantenimento que incluye todo ese proceso más revisiones de
                   seguridad, actualizaciones y cambios futuros que quieras
                   hacerle a tu sitio web. Puedes revisar <a
-                    href="/mantenimiento-web/">AQUÍ</a
+                    href="/servicios/mantenimiento-web/">AQUÍ</a
                   > para saber más de ese servicio.
                 </p>
               </details>
@@ -288,7 +293,7 @@ import ContactSection from "../../components/page/ContactSection.astro";
                   Para eso ofrezco un servicio de Mantenimiento Web en el que me
                   encargo de mantener al día todo el sitio web y su
                   optimización. Para ese servicio visita <a
-                    href="/mantenimiento-web/">AQUÍ</a
+                    href="/servicios/mantenimiento-web/">AQUÍ</a
                   >.
                 </p>
               </details>
@@ -314,7 +319,7 @@ import ContactSection from "../../components/page/ContactSection.astro";
                   Sí, ofrezco paquetes de mantenimiento para asegurar que tu
                   sitio web esté siempre actualizado y funcionando
                   correctamente. Para ese servicio visita <a
-                    href="/mantenimiento-web/">AQUÍ</a
+                    href="/servicios/mantenimiento-web/">AQUÍ</a
                   >.
                 </p>
               </details>
@@ -346,5 +351,19 @@ import ContactSection from "../../components/page/ContactSection.astro";
   .green-bg {
     background-color: hsl(115, 65%, 54%);
     color: var(--gray-950);
+  }
+
+  .plans-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .faq {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
   }
 </style>

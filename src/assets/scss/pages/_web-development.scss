@@ -9,6 +9,7 @@
       list-style: disc;
       padding-left: var(--space-s);
     }
+
     .grid {
       --minimun: 40ch;
       column-gap: 2rem;
@@ -20,13 +21,13 @@
   }
 
   .recommended {
-    border: 2px solid var(--alert-100);
+    border: 2px solid var(--yellow-300);
 
     span {
       font-size: var(--step--1);
       font-weight: 700;
       color: hsl(0, 0%, 0%);
-      background-color: var(--alert-100);
+      background-color: var(--yellow-300);
       padding: var(--space-3xs) var(--space-xs);
       border-radius: 4px;
     }

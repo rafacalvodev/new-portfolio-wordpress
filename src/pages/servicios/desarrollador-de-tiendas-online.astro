@@ -2,9 +2,17 @@
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import ServiceBanner from "../../components/page/PageBanner.astro";
 import ContactSection from "../../components/page/ContactSection.astro";
+
+const title = "Tiendas online — Desarrollo eCommerce | Rafael Calvo";
+const description =
+  "Desarrollo de tiendas online con soluciones seguras, gestión de inventario y optimización para ventas. Integraciones de pago y soporte técnico.";
 ---
 
-<DefaultLayout class:list="ecommerce-development">
+<DefaultLayout
+  title={title}
+  description={description}
+  class:list="ecommerce-development"
+>
   <ServiceBanner
     title="Desarrollo de tiendas online a medida"
     description="¿Quieres vender tus productos o servicios en línea? Te ayudo a crear una tienda online profesional y funcional."
@@ -344,8 +352,8 @@ import ContactSection from "../../components/page/ContactSection.astro";
                 Si no quieres pasar por ese trabajo, ofrezco un servicio de
                 mantenimento que incluye todo ese proceso más revisiones de
                 seguridad, actualizaciones y cambios futuros que quieras hacerle
-                a tu sitio web. Puedes revisar <a href="/mantenimiento-web/"
-                  >AQUÍ</a
+                a tu sitio web. Puedes revisar <a
+                  href="/servicios/mantenimiento-web/">AQUÍ</a
                 > para saber más de ese servicio.
               </p>
             </details>
@@ -376,7 +384,9 @@ import ContactSection from "../../components/page/ContactSection.astro";
               <p>
                 Para eso ofrezco un servicio de Mantenimiento Web en el que me
                 encargo de mantener al día todo el sitio web y su optimización.
-                Para ese servicio visita <a href="/mantenimiento-web/">AQUÍ</a>.
+                Para ese servicio visita <a href="/servicios/mantenimiento-web/"
+                  >AQUÍ</a
+                >.
               </p>
             </details>
           </li>
@@ -400,7 +410,9 @@ import ContactSection from "../../components/page/ContactSection.astro";
               <p>
                 Sí, ofrezco paquetes de mantenimiento para asegurar que tu sitio
                 web esté siempre actualizado y funcionando correctamente. Para
-                ese servicio visita <a href="/mantenimiento-web/">AQUÍ</a>.
+                ese servicio visita <a href="/servicios/mantenimiento-web/"
+                  >AQUÍ</a
+                >.
               </p>
             </details>
           </li>
@@ -415,6 +427,20 @@ import ContactSection from "../../components/page/ContactSection.astro";
     .blue-bg {
       background-color: #58b5f8;
       color: var(--gray-950);
+    }
+
+    .plans-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .faq {
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
     }
   </style>
 </DefaultLayout>

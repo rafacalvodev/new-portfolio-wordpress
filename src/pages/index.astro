@@ -7,9 +7,14 @@ import HomeAbout from "../components/home/HomeAbout.astro";
 import HomeBlog from "../components/home/HomeBlog.astro";
 // import CTA from "../components/CTA.astro";
 import ContactSection from "../components/page/ContactSection.astro";
+
+const title =
+  "Rafael Calvo — Desarrollador web freelance | WordPress & Frontend";
+const description =
+  "Desarrollador web freelance especializado en WordPress y frontend. Diseño accesible, rápido y optimizado para pymes y ONGs. Mira mi portafolio y servicios.";
 ---
 
-<DefaultLayout>
+<DefaultLayout title={title} description={description}>
   <HomeHero />
   <HomeServices title="Estos son los servicios que ofrezco." />
   <HomeAbout />

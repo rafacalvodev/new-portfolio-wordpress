@@ -3,9 +3,13 @@ export const prerender = true;
 
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import PageBanner from "../components/page/PageBanner.astro";
+
+const title = "Contacto — Rafael Calvo | Desarrollo web y soporte";
+const description =
+  "¿Tienes un proyecto web? Contacta a Rafael Calvo para presupuestos, consultoría y soporte técnico. Respuesta rápida y soluciones a medida.";
 ---
 
-<DefaultLayout>
+<DefaultLayout title={title} description={description}>
   <PageBanner
     title="¿Listo para llevar tu presencia en línea al siguiente nivel? Contáctame hoy mismo."
     description="¿Tienes alguna pregunta o quieres discutir un proyecto? ¡Estoy aquí para ayudarte! No dudes en contactarme para cualquier consulta, cotización o simplemente para decir hola."
@@ -153,7 +157,7 @@ import PageBanner from "../components/page/PageBanner.astro";
 
   .right-col {
     form {
-      background-color: var(--alert-100);
+      background-color: var(--yellow-300);
       padding: var(--space-m);
     }
   }

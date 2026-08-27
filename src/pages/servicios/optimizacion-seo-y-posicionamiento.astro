@@ -2,9 +2,14 @@
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import PageBanner from "../../components/page/PageBanner.astro";
 import ContactSection from "../../components/page/ContactSection.astro";
+
+const title =
+  "Optimización SEO & Posicionamiento — Mejora tu visibilidad | Rafael Calvo";
+const description =
+  "Auditoría y optimización SEO on-page y técnico para mejorar visibilidad y tráfico: contenidos, velocidad y buenas prácticas de indexación.";
 ---
 
-<DefaultLayout class:list="seo-page">
+<DefaultLayout title={title} description={description} class:list="seo-page">
   <PageBanner
     title="Servicios SEO, Optimización y Posicionamiento Web en Google"
     description="Mejora la visibilidad de tu sitio web en los motores de búsqueda con nuestras estrategias de SEO personalizadas."
@@ -53,7 +58,7 @@ import ContactSection from "../../components/page/ContactSection.astro";
           <li>
             <article>
               <h3>Velocidad de carga:</h3>
-              <ul>
+              <ul role="list" class="benefit-list | flow">
                 <li>Compresión de los archivos HTML, CSS y JavaScript.</li>
                 <li>
                   Optimización de las imágenes mediante compresión y cambio al
@@ -70,7 +75,7 @@ import ContactSection from "../../components/page/ContactSection.astro";
           <li>
             <article>
               <h3>Mejora de indexación:</h3>
-              <ul>
+              <ul role="list" class="benefit-list | flow">
                 <li>
                   Alta en «Google Search Console» para ayudar a Google a
                   encontrar antes y mejor tu página web.
@@ -85,7 +90,7 @@ import ContactSection from "../../components/page/ContactSection.astro";
           <li>
             <article>
               <h3>Pensando en los usuarios:</h3>
-              <ul>
+              <ul role="list" class="benefit-list | flow">
                 <li>Buscaré las mejores palabras clave para tu web.</li>
                 <li>
                   Utilizaremos en tus páginas principales los títulos y
@@ -98,7 +103,7 @@ import ContactSection from "../../components/page/ContactSection.astro";
           <li>
             <article>
               <h3>*Posicionamiento web local:</h3>
-              <ul>
+              <ul role="list" class="benefit-list | flow">
                 <li>
                   *Alta en “Google My Business”, para que cuando un usuario te
                   busque en Google, aparezca tu negocio en el lado derecho con
@@ -112,7 +117,7 @@ import ContactSection from "../../components/page/ContactSection.astro";
           <li>
             <article>
               <h3>Parte técnica:</h3>
-              <ul>
+              <ul role="list" class="benefit-list | flow">
                 <li>Declarar el idioma al navegador.</li>
                 <li>URL canónicas.</li>
                 <li>Correcciones en la visualización móvil.</li>
@@ -132,7 +137,7 @@ import ContactSection from "../../components/page/ContactSection.astro";
           <li>
             <article>
               <h3>Parte de seguridad:</h3>
-              <ul>
+              <ul role="list" class="benefit-list | flow">
                 <li>
                   Registro DMARC en las DNS de tus correos electrónicos para
                   evitar fraudes.
@@ -163,7 +168,7 @@ import ContactSection from "../../components/page/ContactSection.astro";
             </article>
           </li>
           <li>
-            <article class="card-1">
+            <article class="card">
               <div class="flow">
                 <h3>¿Quieres este servicio?</h3>
                 <p>
@@ -293,11 +298,17 @@ import ContactSection from "../../components/page/ContactSection.astro";
 
   .seo-page {
     --section-spacing: var(--space-l);
+    --flow-spacer: var(--space-s);
 
     .benefits {
+      ul:first-of-type {
+        list-style: none;
+        padding: 0;
+      }
+
       article ul {
         list-style: disc;
-        padding-left: var(--space-s);
+        padding-left: var(--space-m);
       }
     }
 
@@ -309,6 +320,14 @@ import ContactSection from "../../components/page/ContactSection.astro";
     .gray-bg {
       color: var(--gray-900);
       background-color: var(--gray-200);
+    }
+
+    .faq {
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
     }
   }
 </style>

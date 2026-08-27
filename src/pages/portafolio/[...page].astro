@@ -22,7 +22,10 @@ interface Props {
 const { page } = Astro.props;
 ---
 
-<DefaultLayout>
+<DefaultLayout
+  title="Portafolio — Proyectos de desarrollo web | Rafael Calvo"
+  description="Casos de estudio y proyectos de diseño y desarrollo web para pymes y ONGs. Ejemplos y detalles de cada proyecto."
+>
   <PageBanner
     title="Portafolio de Proyectos"
     description="Todos los proyectos que salen aquí son desarrollados por mí, desde el diseño hasta la implementación. Si quieres que tu proyecto sea desarrollado con la misma calidad y atención al detalle, no dudes en contactarme."
@@ -79,7 +82,7 @@ const { page } = Astro.props;
 
 <style lang="scss">
   .portfolio-banner {
-    background-color: linear-gradient(90deg, #7debf2, #60a4ff);
+    background-color: var(--blue-400);
     color: var(--gray-950);
   }
   .projects-section {

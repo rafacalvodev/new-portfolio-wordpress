@@ -14,6 +14,7 @@ const readingTime = estimateReadingTime(stripHtml(post.content.rendered));
 
 <DefaultLayout
   title={post.title.rendered}
+  description={stripHtml(post.excerpt?.rendered || "").substring(0, 155)}
   image={post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
     "/social-preview-image.png"}
 >
@@ -117,7 +118,7 @@ const readingTime = estimateReadingTime(stripHtml(post.content.rendered));
   }
 
   .tag {
-    background: var(--alert-100);
+    background: var(--yellow-300);
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
     font-size: var(--step--2);

@@ -2,9 +2,18 @@
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import PageBanner from "../../components/page/PageBanner.astro";
 import ContactSection from "../../components/page/ContactSection.astro";
+
+const title =
+  "Mantenimiento web — Soporte, seguridad y actualizaciones | Rafael Calvo";
+const description =
+  "Servicios de mantenimiento: copias de seguridad, actualizaciones, seguridad y optimización de rendimiento para mantener tu web estable y segura.";
 ---
 
-<DefaultLayout class:list="maintenance-page">
+<DefaultLayout
+  title={title}
+  description={description}
+  class:list="maintenance-page"
+>
   <PageBanner
     title="Mantenimiento Web: Olvídate de los Dolores de Cabeza con tu Sitio"
     description="¿Tu página web en WordPress se cae, es lenta o te da miedo que la hackeen? Como PYME o ONG en Venezuela, no tienes tiempo para eso. Yo me encargo de todo: actualizaciones, seguridad y soporte mensual para que funcione perfecto. Tú enfócate en crecer."
@@ -115,5 +124,13 @@ import ContactSection from "../../components/page/ContactSection.astro";
   .light-purple-bg {
     background-color: #bf65fc;
     color: var(--gray-950);
+  }
+
+  .faq {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
   }
 </style>
