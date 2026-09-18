@@ -2,20 +2,17 @@
 title: Azuquita Cósmica
 author: Rafael Calvo
 description: A comprehensive smart home solution designed specifically for users with visual impairments, featuring voice-first interactions and haptic feedback
-features:
-  - Página web tipo Blog.
-  - Astróloga residenciada en Madrid, España.
-  - Hecho con wordpress basado en plantilla.
+
 stack:
-  - WordPress.
-  - Elementor.
+  - WordPress
+  - Elementor
 type:
   - Página web de consulta y guía.
 work:
-  - Diseño.
-  - Desarrollo.
-  - Mantenimiento.
-  - Optimización SEO.
+  - Diseño
+  - Desarrollo
+  - Mantenimiento
+  - Optimización SEO
 link: https://www.azuquitacosmica.com/
 featured: false
 image: "azuquitacosmica-screenshot.png"

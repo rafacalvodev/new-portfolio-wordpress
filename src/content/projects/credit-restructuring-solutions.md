@@ -2,20 +2,18 @@
 title: Credit Restructuring Solutions
 author: Rafael Calvo
 description: A comprehensive smart home solution designed specifically for users with visual impairments, featuring voice-first interactions and haptic feedback
-features:
-  - Página web corporativa.
-  - Compañía de asesoramiento financiero.
-  - Hecho con Wordpress con diesño personalizado.
 
 stack:
-  - WordPress.
-  - Elementor.
+  - WordPress
+  - Elementor
+  - RankMath
+  - Google Search Console
 type:
-  - Sitio web corporativo.
+  - Sitio web corporativo
 work:
-  - Desarrollo.
-  - Mantenimiento.
-  - Optimización SEO.
+  - Desarrollo
+  - Mantenimiento
+  - Optimización SEO
 link: https://www.creditrestructuringsolutions.com/
 featured: true
 image: "crs-screenshot.png"

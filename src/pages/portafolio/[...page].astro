@@ -52,13 +52,13 @@ const { page } = Astro.props;
                 <h2>{project.data.title}</h2>
                 <ul role="list" class="project-details | flow">
                   <li>
-                    <strong>Stack:</strong> {project.data.stack.join(", ")}
+                    <strong>Stack:</strong> {project.data.stack.join(", ")}.
                   </li>
                   <li>
                     <strong>Tipo:</strong> {project.data.type.join(", ")}
                   </li>
                   <li>
-                    <strong>Trabajo:</strong> {project.data.work.join(", ")}
+                    <strong>Trabajo:</strong> {project.data.work.join(", ")}.
                   </li>
                 </ul>
                 <a class="button" href={project.data.link} target="_blank">

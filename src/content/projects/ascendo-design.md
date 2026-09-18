@@ -2,20 +2,15 @@
 title: Ascendo Design
 author: Rafael Calvo
 description: A comprehensive smart home solution designed specifically for users with visual impairments, featuring voice-first interactions and haptic feedback
-features:
-  - Página  tipo Landing Page.
-  - Compañía de remodelaciones de interiores.
-  - Hecho con Wordpress con diseño personalizado.
-
 stack:
-  - WordPress.
-  - Guttenberg.
+  - WordPress
+  - Guttenberg
 type:
-  - Landing page.
+  - Landing page
 work:
-  - Diseño.
-  - Desarrollo.
-  - Optimización SEO.
+  - Diseño
+  - Desarrollo
+  - Optimización SEO
 link: https://ascendodesign.com/
 featured: true
 image: "ascendodesign-screenshot.png"

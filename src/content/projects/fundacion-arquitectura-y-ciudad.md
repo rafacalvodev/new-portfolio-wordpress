@@ -1,22 +1,23 @@
 ---
 title: Fundación Arquitectura y Ciudad
-author: John Doe
+author: Rafael Calvo
 description: A comprehensive smart home solution designed specifically for users with visual impairments, featuring voice-first interactions and haptic feedback
-features:
-  - Sitio web tipo blog y repositorio.
-  - Fundación dedicada a la generación y difusión de conocimientos en el campo de la arquitectura.
-  - Hecho con Wordpress basado en una plantilla.
+
 stack:
-  - WordPress.
+  - WordPress
+  - Google Search Console
 type:
   - Página web de consulta y guía.
 work:
-  - Diseño.
-  - Desarrollo.
-  - Mantenimiento.
-  - Optimización SEO.
+  - Diseño
+  - Desarrollo
+  - Mantenimiento
+  - Optimización SEO
+
 link: https://fundaayc.com/
+
 featured: true
+
 image: "fac-screenshot.png"
 ---
 

@@ -2,17 +2,22 @@
 title: Gordo Aviation
 author: Rafael Calvo
 description: A comprehensive smart home solution designed specifically for users with visual impairments, featuring voice-first interactions and haptic feedback
+
 stack:
-  - WordPress.
-  - GenerateBlocks.
+  - WordPress
+  - GenerateBlocks
+  - Google Search Console
 type:
-  - Landing page.
+  - Landing page
 work:
-  - Diseño.
-  - Desarrollo.
-  - Optimización SEO.
+  - Diseño
+  - Desarrollo
+  - Optimización SEO
+
 link: https://gordoaviation.com/
+
 featured: false
+
 image: "gordoaviation-screenshot.png"
 ---
 
