@@ -38,7 +38,7 @@ const { page } = Astro.props;
           >Project {page.start + 1} through {page.end + 1} of {page.total} total projects</em
         >
       </p> -->
-      <ul class="grid">
+      <ul role="list" class="grid">
         {
           page.data.map((project) => (
             <li class="mb-4">
@@ -50,10 +50,16 @@ const { page } = Astro.props;
                   />
                 )}
                 <h2>{project.data.title}</h2>
-                <ul class="features-list | flow">
-                  {project.data.features.map((feature) => (
-                    <li>{feature}</li>
-                  ))}
+                <ul role="list" class="project-details | flow">
+                  <li>
+                    <strong>Stack:</strong> {project.data.stack.join(", ")}
+                  </li>
+                  <li>
+                    <strong>Tipo:</strong> {project.data.type.join(", ")}
+                  </li>
+                  <li>
+                    <strong>Trabajo:</strong> {project.data.work.join(", ")}
+                  </li>
                 </ul>
                 <a class="button" href={project.data.link} target="_blank">
                   Visitar sitio Web <VisitSite />
@@ -88,9 +94,7 @@ const { page } = Astro.props;
   .projects-section {
     margin-block-end: 2rem;
 
-    ul {
-      list-style: none;
-      margin: 0;
+    .project-details {
       padding: 0;
     }
 
@@ -100,11 +104,6 @@ const { page } = Astro.props;
 
     .pagination {
       margin-block-end: 2rem;
-    }
-
-    .features-list {
-      list-style-type: disc;
-      padding-left: 1em;
     }
   }
 </style>

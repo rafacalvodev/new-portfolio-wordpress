@@ -15,7 +15,7 @@ const featuredProjects = projects.filter(
     </div>
     {
       featuredProjects.length > 0 ? (
-        <ul class="grid">
+        <ul role="list" class="grid">
           {featuredProjects.map((project) => {
             const linkTarget = project.data.link ?? "/portafolio";
             const isExternal =
@@ -34,15 +34,17 @@ const featuredProjects = projects.filter(
 
                   <h3>{project.data.title}</h3>
 
-                  {project.data.features?.length ? (
-                    <ul class="features-list | flow">
-                      {project.data.features.map((feature) => (
-                        <li>{feature}</li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p class="muted">No hay características listadas aún.</p>
-                  )}
+                  <ul role="list" class="project-details | flow">
+                    <li>
+                      <strong>Stack:</strong> {project.data.stack.join(", ")}
+                    </li>
+                    <li>
+                      <strong>Tipo:</strong> {project.data.type.join(", ")}
+                    </li>
+                    <li>
+                      <strong>Trabajo:</strong> {project.data.work.join(", ")}
+                    </li>
+                  </ul>
 
                   <a
                     class="button"
@@ -78,14 +80,7 @@ const featuredProjects = projects.filter(
       height: auto;
     }
 
-    .features-list {
-      list-style-type: disc;
-      padding-left: 1em;
-    }
-
-    ul {
-      list-style: none;
-      margin: 0;
+    .project-details {
       padding: 0;
     }
   }

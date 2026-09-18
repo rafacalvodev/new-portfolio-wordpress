@@ -1,11 +1,21 @@
 ---
 title: Credit Restructuring Solutions
-author: John Doe
+author: Rafael Calvo
 description: A comprehensive smart home solution designed specifically for users with visual impairments, featuring voice-first interactions and haptic feedback
 features:
   - Página web corporativa.
   - Compañía de asesoramiento financiero.
   - Hecho con Wordpress con diesño personalizado.
+
+stack:
+  - WordPress.
+  - Elementor.
+type:
+  - Sitio web corporativo.
+work:
+  - Desarrollo.
+  - Mantenimiento.
+  - Optimización SEO.
 link: https://www.creditrestructuringsolutions.com/
 featured: true
 image: "crs-screenshot.png"

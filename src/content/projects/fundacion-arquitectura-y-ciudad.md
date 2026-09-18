@@ -6,6 +6,15 @@ features:
   - Sitio web tipo blog y repositorio.
   - Fundación dedicada a la generación y difusión de conocimientos en el campo de la arquitectura.
   - Hecho con Wordpress basado en una plantilla.
+stack:
+  - WordPress.
+type:
+  - Página web de consulta y guía.
+work:
+  - Diseño.
+  - Desarrollo.
+  - Mantenimiento.
+  - Optimización SEO.
 link: https://fundaayc.com/
 featured: true
 image: "fac-screenshot.png"

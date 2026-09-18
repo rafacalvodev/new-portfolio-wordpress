@@ -6,6 +6,16 @@ features:
   - Página  tipo Landing Page.
   - Compañía de remodelaciones de interiores.
   - Hecho con Wordpress con diseño personalizado.
+
+stack:
+  - WordPress.
+  - Guttenberg.
+type:
+  - Landing page.
+work:
+  - Diseño.
+  - Desarrollo.
+  - Optimización SEO.
 link: https://ascendodesign.com/
 featured: true
 image: "ascendodesign-screenshot.png"
