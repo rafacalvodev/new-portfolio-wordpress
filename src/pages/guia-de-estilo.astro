@@ -1,0 +1,377 @@
+---
+export const prerender = true;
+
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import PageBanner from "../components/page/PageBanner.astro";
+
+const title = "Guía de Estilo";
+const description =
+  "Referencia rápida de la tipografía, colores, botones y patrones visuales usados en el sitio.";
+---
+
+<DefaultLayout title={title} description={description}>
+  <PageBanner
+    title="Guía de Estilo"
+    description="Referencia rápida de tipografía, botones, colores y componentes para mantener una identidad visual coherente."
+    class="style-guide-banner"
+  />
+
+  <section class="page-section style-guide-section">
+    <div class="container style-guide-layout">
+      <nav class="style-guide-toc" aria-label="Tabla de contenidos">
+        <h2>En esta página</h2>
+        <ul>
+          <li><a href="#headings">Encabezados</a></li>
+          <li><a href="#typography">Tipografía</a></li>
+          <li><a href="#buttons">Botones</a></li>
+          <li><a href="#colors">Colores</a></li>
+          <li><a href="#lists">Listas</a></li>
+          <li><a href="#table">Tabla</a></li>
+          <li><a href="#code">Código</a></li>
+        </ul>
+      </nav>
+
+      <div class="style-guide-content">
+        <section id="headings" class="style-guide-block">
+          <p class="section-label">01 · Encabezados</p>
+          <h1>Heading 1</h1>
+          <p>
+            Los encabezados siguen una escala de tipografía fluida para mantener
+            una lectura cómoda desde móvil hasta escritorio.
+          </p>
+          <h2>Heading 2</h2>
+          <p>Este es un ejemplo de título de sección.</p>
+          <h3>Heading 3</h3>
+          <p>Se usa para subtítulos dentro de bloques más grandes.</p>
+          <h4>Heading 4</h4>
+          <p>Ideal para entradas y etiquetas pequeñas.</p>
+        </section>
+
+        <section id="typography" class="style-guide-block">
+          <p class="section-label">02 · Tipografía</p>
+          <p>
+            El cuerpo de texto usa una base legible con un interlineado amplio y
+            una medida aprox. de 70 caracteres por línea. Esta combinación ayuda
+            a mejorar la legibilidad del contenido y a priorizar la lectura.
+          </p>
+
+          <blockquote>
+            “La claridad en el diseño acompaña la claridad en la comunicación.”
+          </blockquote>
+
+          <p>
+            Aquí hay un <a href="/">enlace</a> de ejemplo, texto <strong
+              >en negrita</strong
+            >
+            y un fragmento de <em>cursiva</em> para demostrar el ritmo visual del
+            contenido editorial.
+          </p>
+        </section>
+
+        <section id="buttons" class="style-guide-block">
+          <p class="section-label">03 · Botones</p>
+          <div class="button-row">
+            <a href="/contacto/" class="button button-primary"
+              >Botón principal</a
+            >
+            <a href="/contacto/" class="button button-secondary"
+              >Botón secundario</a
+            >
+            <button type="button" class="button">Botón de formulario</button>
+          </div>
+        </section>
+
+        <section id="colors" class="style-guide-block">
+          <p class="section-label">04 · Paleta</p>
+          <div class="swatch-grid">
+            <div class="swatch">
+              <span class="swatch-chip swatch-blue"></span>
+              <div>
+                <strong>Azul</strong>
+                <span>#2C53B5</span>
+              </div>
+            </div>
+            <div class="swatch">
+              <span class="swatch-chip swatch-yellow"></span>
+              <div>
+                <strong>Amarillo</strong>
+                <span>#FCD45A</span>
+              </div>
+            </div>
+            <div class="swatch">
+              <span class="swatch-chip swatch-red"></span>
+              <div>
+                <strong>Rojo</strong>
+                <span>#FD3134</span>
+              </div>
+            </div>
+            <div class="swatch">
+              <span class="swatch-chip swatch-gray"></span>
+              <div>
+                <strong>Gris</strong>
+                <span>#19191A</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="lists" class="style-guide-block">
+          <p class="section-label">05 · Listas</p>
+          <div class="list-columns">
+            <div>
+              <h3>Lista ordenada</h3>
+              <ol>
+                <li>Diseño claro y sencillo.</li>
+                <li>Jerarquía visual consistente.</li>
+                <li>Contenido fácil de escanear.</li>
+              </ol>
+            </div>
+            <div>
+              <h3>Lista sin orden</h3>
+              <ul>
+                <li>Accesibilidad por defecto.</li>
+                <li>Microinteracciones sutiles.</li>
+                <li>Respeto por la legibilidad.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="table" class="style-guide-block">
+          <p class="section-label">06 · Tabla</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Servicio</th>
+                <th>Formato</th>
+                <th>Resultado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Página web</td>
+                <td>Diseño + desarrollo</td>
+                <td>Presencia clara</td>
+              </tr>
+              <tr>
+                <td>Tienda online</td>
+                <td>UX + ecommerce</td>
+                <td>Más conversiones</td>
+              </tr>
+              <tr>
+                <td>SEO</td>
+                <td>Auditoría + optimización</td>
+                <td>Mejor posicionamiento</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="code" class="style-guide-block">
+          <p class="section-label">07 · Código</p>
+          <pre><code>{`const siteStyles = {
+  palette: ["blue", "yellow", "red", "gray"],
+  typography: "Lexend",
+  spacing: "fluid scale",
+};`}</code></pre>
+        </section>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>
+
+<style lang="scss">
+  .style-guide-banner {
+    background: linear-gradient(
+      90deg,
+      rgba(252, 212, 90, 1) 0%,
+      rgba(255, 255, 255, 1) 35%,
+      rgba(107, 173, 239, 1) 100%
+    );
+    color: var(--gray-950);
+  }
+
+  .style-guide-layout {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+
+    @media (min-width: 64rem) {
+      grid-template-columns: minmax(12rem, 18rem) minmax(0, 1fr);
+    }
+  }
+
+  .style-guide-toc {
+    position: sticky;
+    top: 1rem;
+    padding: 1.25rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(6px);
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: var(--step-2);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    a {
+      color: var(--gray-950);
+      text-decoration: none;
+
+      &:hover,
+      &:focus-visible {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .style-guide-content {
+    display: grid;
+    gap: 2rem;
+    max-width: 70ch;
+  }
+
+  .style-guide-block {
+    padding: 1.5rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 12px 30px rgba(25, 25, 26, 0.04);
+
+    > * + * {
+      margin-top: 1rem;
+    }
+  }
+
+  .section-label {
+    margin: 0;
+    font-size: var(--step--1);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-700);
+    font-weight: 700;
+  }
+
+  .button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .button-primary {
+    background-color: var(--blue-800);
+    border-color: var(--blue-800);
+  }
+
+  .button-secondary {
+    background-color: var(--yellow-300);
+    border-color: var(--yellow-300);
+    color: var(--gray-950);
+  }
+
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .swatch {
+    display: grid;
+    gap: 0.75rem;
+    padding: 0.875rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.25);
+
+    strong,
+    span {
+      display: block;
+    }
+
+    span {
+      color: var(--gray-700);
+      font-size: var(--step--1);
+    }
+  }
+
+  .swatch-chip {
+    display: block;
+    width: 100%;
+    height: 5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(25, 25, 26, 0.1);
+  }
+
+  .swatch-blue {
+    background: var(--blue-800);
+  }
+
+  .swatch-yellow {
+    background: var(--yellow-300);
+  }
+
+  .swatch-red {
+    background: var(--red-500);
+  }
+
+  .swatch-gray {
+    background: var(--gray-900);
+  }
+
+  .list-columns {
+    display: grid;
+    gap: 1.5rem;
+
+    @media (min-width: 40rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border: 1px solid var(--gray-300);
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  th,
+  td {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--gray-300);
+    text-align: left;
+  }
+
+  thead th {
+    background: rgba(44, 83, 181, 0.08);
+    font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid var(--yellow-400);
+    background: rgba(252, 212, 90, 0.15);
+    color: var(--gray-950);
+    font-style: italic;
+  }
+
+  pre {
+    overflow-x: auto;
+    margin: 0;
+    border-radius: 0.75rem;
+    background: var(--gray-900);
+    color: var(--gray-50);
+  }
+</style>

@@ -8,25 +8,27 @@
 
 /* @link https://utopia.fyi/type/calculator?c=360,18,1.2,1240,20,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
+/* @link https://utopia.fyi/type/calculator?c=360,16,1.2,1240,18,1.2,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
 :root {
-  /* Step -2: 12.5px → 12.8px */
-  --step--2: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
-  /* Step -1: 15px → 16px */
-  --step--1: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
-  /* Step 0: 18px → 20px */
-  --step-0: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
-  /* Step 1: 21.6px → 25px */
-  --step-1: clamp(1.35rem, 1.2631rem + 0.3864vw, 1.5625rem);
-  /* Step 2: 25.92px → 31.25px */
-  --step-2: clamp(1.62rem, 1.4837rem + 0.6057vw, 1.9531rem);
-  /* Step 3: 31.104px → 39.0625px */
-  --step-3: clamp(1.944rem, 1.7405rem + 0.9044vw, 2.4414rem);
-  /* Step 4: 37.3248px → 48.8281px */
-  --step-4: clamp(2.3328rem, 2.0387rem + 1.3072vw, 3.0518rem);
-  /* Step 5: 44.7898px → 61.0352px */
-  --step-5: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
-  /* Step 6: 53.7477px → 76.2939px */
-  --step-6: clamp(3.3592rem, 2.7828rem + 2.5621vw, 4.7684rem);
+  /* Step -2: 11.1111px → 12.5px */
+  --step--2: clamp(0.6944rem, 0.6589rem + 0.1578vw, 0.7813rem);
+  /* Step -1: 13.3333px → 15px */
+  --step--1: clamp(0.8333rem, 0.7907rem + 0.1894vw, 0.9375rem);
+  /* Step 0: 16px → 18px */
+  --step-0: clamp(1rem, 0.9489rem + 0.2273vw, 1.125rem);
+  /* Step 1: 19.2px → 21.6px */
+  --step-1: clamp(1.2rem, 1.1386rem + 0.2727vw, 1.35rem);
+  /* Step 2: 23.04px → 25.92px */
+  --step-2: clamp(1.44rem, 1.3664rem + 0.3273vw, 1.62rem);
+  /* Step 3: 27.648px → 31.104px */
+  --step-3: clamp(1.728rem, 1.6396rem + 0.3927vw, 1.944rem);
+  /* Step 4: 33.1776px → 37.3248px */
+  --step-4: clamp(2.0736rem, 1.9676rem + 0.4713vw, 2.3328rem);
+  /* Step 5: 39.8131px → 44.7898px */
+  --step-5: clamp(2.4883rem, 2.3611rem + 0.5655vw, 2.7994rem);
+  /* Step 6: 47.7757px → 53.7477px */
+  --step-6: clamp(2.986rem, 2.8333rem + 0.6786vw, 3.3592rem);
 }
 
 body {
@@ -107,50 +109,50 @@ body {
   }
 
   h1 {
-    font-size: var(--step-4);
-    line-height: 1.15;
+    font-size: var(--step-6);
+    line-height: 1.2;
   }
 
   h2 {
-    font-size: var(--step-3);
+    font-size: var(--step-5);
     line-height: 1.15;
   }
 
   h3 {
-    font-size: var(--step-2);
-    line-height: 2.25rem;
+    font-size: var(--step-4);
+    line-height: 1.1;
 
-    @include breakpoint(medium) {
-      line-height: 2.8125rem;
-    }
+    // @include breakpoint(medium) {
+    //   line-height: 2.8125rem;
+    // }
   }
 
   h4 {
-    font-size: var(--step-1);
+    font-size: var(--step-3);
     line-height: 1.875rem;
 
-    @include breakpoint(medium) {
-      line-height: 2.25rem;
-    }
+    // @include breakpoint(medium) {
+    //   line-height: 2.25rem;
+    // }
   }
 
   h5 {
-    font-size: 1.125rem;
+    font-size: var(--step-2);
     line-height: 1.6875rem;
 
-    @include breakpoint(medium) {
-      font-size: 1.25rem;
-      line-height: 1.875rem;
-    }
+    // @include breakpoint(medium) {
+    //   font-size: 1.25rem;
+    //   line-height: 1.875rem;
+    // }
   }
 
   h6 {
-    font-size: 1rem;
+    font-size: var(--step-1);
     line-height: 1.5rem;
 
-    @include breakpoint(medium) {
-      font-size: 1.125rem;
-      line-height: 1.6875rem;
-    }
+    // @include breakpoint(medium) {
+    //   font-size: 1.125rem;
+    //   line-height: 1.6875rem;
+    // }
   }
 }
